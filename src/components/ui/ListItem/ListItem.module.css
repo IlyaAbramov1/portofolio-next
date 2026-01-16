@@ -1,0 +1,93 @@
+.listItemContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+.listItemContainer:hover {
+    text-transform: uppercase;
+}
+
+.listItemCover {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+
+    background-color: var(--secondary-bg-color);
+}
+
+.listItemContainer:hover .listItemCover {
+    opacity: 0.9;
+}
+
+.listItemContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.listItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.listItemTitle {
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--secondary-text-color);
+
+    text-decoration: none;
+    text-align: left;
+}
+
+.listItemSubText {
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--thirdly-text-color);  
+    text-align: left;
+}
+
+.listItemDescription {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    row-gap: 0px;
+    flex-wrap: wrap;
+}
+
+.linkButton {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--button-text-color);
+    background-color: var(--accent-color);
+    font-size: var(--main-text-size);
+    text-decoration: none;
+    line-height: 100%;
+    white-space: nowrap;
+
+    transition: all 0.1s ease;
+}
+
+.linkButton:hover {
+    color: var(--button-text-color) !important;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+}

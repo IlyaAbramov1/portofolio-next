@@ -1,0 +1,97 @@
+.articleContent {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    transform-origin: top;
+
+    text-align: justify;
+    animation: article-fade-in 0.6s ease-out forwards;
+    opacity: 0;
+    filter: blur(12px);
+    will-change: opacity, filter;
+}
+
+@keyframes article-fade-in {
+    from {
+        opacity: 0;
+        filter: blur(12px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.articlePar {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.articlePar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    margin-left: 24px;
+
+    list-style: none;
+    text-wrap: pretty;
+}
+
+.articlePar li {
+    position: relative;
+}
+
+.articlePar li::after {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+    
+    position: absolute;
+    left: -16px;
+    top: 10px;
+
+    background-color: var(--accent-color);
+}
+
+.cssBlocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cssBlock {
+    background-color: var(--deep-bg-color);
+    border: 1px solid var(--stroke);
+    padding: 12px 14px;
+    font-family: var(--font-family-mono);
+    line-height: 160%;
+}
+
+.cssLine {
+    display: block;
+}
+
+.cssComment {
+    color: var(--thirdly-text-color);
+}
+
+.cssSelector {
+    color: #2fa24a;
+}
+
+.cssProp {
+    color: #2979ff;
+}
+
+.cssValue {
+    color: #7b4dff;
+}
+
+.cssFunction {
+    color: #ff5ea8;
+}

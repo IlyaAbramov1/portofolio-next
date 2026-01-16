@@ -1,0 +1,34 @@
+.blockHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.blockHeaderInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.blockHeaderIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+
+    pointer-events: none;;
+}
+
+.blockHeaderIcon img {
+    width: 24px;
+    height: 24px;
+}
+
+.blockHeaderTitle {
+    font-size: var(--little-text-size);
+    line-height: var(--little-text-line-height);
+    letter-spacing: var(--text-letter-spacing);
+}
+

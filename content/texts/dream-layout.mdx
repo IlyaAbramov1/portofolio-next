@@ -1,0 +1,183 @@
+import styles from "@/components/mdx/Prose.module.css";
+
+<div className={styles.articlePar}>
+    <h1 className="h1">Вступление</h1>
+    <p>Статья является результатом моей лекции на Дизайн Коммуналке 2025. Спасибо всем организаторам за столь уникальный для Самары фест и возможность выступить на нём.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h2 className="h2">Ответственность за результат</h2>
+    <p>Винить разработку в неправильной реализации макетов — последнее, что нужно делать дизайнеру. Я убеждён, что ответственность за то, как выглядит финальный продукт, лежит только на нас, как на специалистах по визуалу.</p>
+    <p>Чтобы довести наши идеи к их полной реализации на проде, нам нужно понимать три вещи:</p>
+    <ul>
+        <li>Как проектируются наши идеи</li>
+        <li>Как поставить техническое задание разработке</li>
+        <li>Как донести техническое задание разработке</li>
+    </ul>
+    <p>Пройдёмся по пунктам.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h2">1. Как проектируются наши идеи</h1>
+    <p>В конечном итоге задача дизайнера сводится к тому, чтобы проектировщик в лице фронтендера ясно понял его идею. Но как довести дело до идеала, если дизайнер говорит языком абстракций и фигур, а фронтендер на языках программирования?</p>
+    <p>Лучше задать другой вопрос: какой из этих языков легче понять?</p>
+    <p>Я думаю, что код.</p>
+    <p>Язык абстракции субъективен. Он формируется за счёт тенденций и насмотренности, двух абсолютно хаотичных и неподдающимся систематизации факторов.</p>
+    <p>Язык кода, в отличие от абстракций, объективен. Он имеет чёткую систему, набор инструментов, а главное — явный список знаний, которые нужны, чтобы его использовать.</p>
+    <p>Для того, чтобы говорить на одном языке с фронтендером, дизайнеру можно обойтись пониманием <a href="https://doka.guide/html/" className="link" target="_blank" rel="noreferrer">HTML↗</a> и <a href="https://doka.guide/css/" className="link" target="_blank" rel="noreferrer">CSS↗</a> . Первый язык, HTML, формирует структуру страницы в вебе. Второй, CSS, позволяет стилизовать элементы страницы, анимировать и адаптировать их под различные устройства.</p>
+    <p>Изучая код, мы также узнаём и его ограничения. Как эффекты наложения влияют на производительность браузера, какие есть ограничения в базовых анимациях CSS, как работает адаптив. Эти и другие ограничения браузеров должны лежать в нашей голове с первых макетов.</p>
+    <p>Научиться языкам программирования можно в разных источниках. К примеру, есть прекрасный курс от Жени Арутюнова, дизайнера, который уже давно пропагандирует изучение кода коллегам. Я же учусь программированию в Purple School. Отличное место с системной подачей информации и углубленным изучением каждой темы.</p>
+    <p>Стоит также следить и за действующими специалистами. На западном рынке уже несколько лет как сформировалось новое направление Дизайн-инженер, которое вбирает в себя дизайн и программирование. Рекомендую следить за этими ребятами:</p>
+    <ul>
+        <li>
+            <a href="https://emilkowal.ski/" className="link" target="_blank" rel="noreferrer">Эмиль Ковальски↗</a>
+        </li>
+          <li>
+            <a href="http://jhey.dev/" className="link" target="_blank" rel="noreferrer">Джей Томкинс↗</a>
+          </li>
+          <li>
+            <a href="https://jakub.kr/" className="link" target="_blank" rel="noreferrer">Jakub Krehel↗</a>
+          </li>
+          <li>
+            <a href="https://www.rauno.me/" className="link" target="_blank" rel="noreferrer">Рауно Фрайберг↗</a>
+          </li>
+    </ul>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">2. Как поставить техническое задание разработке</h1>
+    <p>Фигма-файл — такое же техническое задание, как и бриф для разработки брендинга. С того момента, как я уяснил эту мысль, взгляд на работу сильно поменялся. Ведь мы, дизайнеры, довольно требовательны к заказчикам в части описания технического задания. Теперь мы должны принять роль заказчика на себя.</p>
+    <p>Ниже ряд инструментов, которые мы используем при формировании технического задания, т.е. Фигма-файла, на проектах в Сирене:</p>
+    <ul>
+        <li>
+        <strong>Работа с Pages</strong> — даёт возможность легко
+        ориентироваться по ТЗ
+        </li>
+        <li>
+        <strong>Дизайн-система проекта</strong> — позволяет перевести
+        разработке элементы в код-компоненты и css-root-стили
+        </li>
+        <li>
+        <strong>Экраны, расставленные в порядке User-flow</strong> — дают
+        явное понимание проекта и возможные флоу и приоритезацию разработке
+        </li>
+        <li>
+        <strong>Семантическое наименование экранов</strong> — в элементах
+        используем только Figma Layout Autonaming
+        </li>
+        <li>
+        <strong>Текстовое описание поведения элементов на экране</strong>
+        </li>
+    </ul>
+
+    <p>Отдельно отмечу последний пункт, который позволяет детальнее погрузить в макет и описать его интерактивную составляющую внутри статики Фигмы.</p>
+    <p>Первый случай использования: когда нужно описать динамично меняющийся контент. Пример:</p>
+
+    <p className="article-description">В момент захода через спортсовскую авторизацию, даём рандомный ник юзеру и помещаем его в плашку. Там помещается +-23 символа с учётом пробелов.</p>
+
+    <p>Второй случай: когда нужно описать интерактивность элемента. Моушн внутри веба — тема, которую стоит описывать в отдельной статье. Ниже представлю лишь один пример анимации подсказок:</p>
+
+    <div className={styles.cssBlocks}>
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Базовое состояние тултипа */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-property</span>:{" "}
+                <span className={styles.cssValue}>opacity, transform</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-duration</span>:{" "}
+                <span className={styles.cssValue}>200ms</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-timing-function</span>:{" "}
+                <span className={styles.cssFunction}>cubic-bezier(0.19, 1, 0.22, 1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Анимация появления */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-enter</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>0</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(0.8)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-enter-active</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>1</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Анимация исчезновения */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-exit</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>1</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-exit-active</span> {"{"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>0</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(0.8)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+    </div>
+
+    <p>В данных блоках мы также используем сторонние инструменты —{" "} <a href="https://codepen.io/" className="link" target="_blank" rel="noreferrer">Codepen↗</a>, библиотеку уже анимированных кодом элементов, и{" "} <a href="https://www.easing.dev/" className="link" target="_blank" rel="noreferrer">Easing Graphs↗</a> , библиотеку изингов.</p>
+    <p>В нашей команде мы ввели чек-лист, по которому мы перепроверяем макет на наличие основных моментов.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">3. Как донести техническое задание разработке</h1>
+    <p>Созвон по передаче макетов разработке. С нашей стороны мы должны детально пересказать ТЗ и ответить на все последующие вопросы. Если нужно — мы вносим исправления в макеты после созвона. Иногда важно услышать ОС от коллег, чтобы макет стал лучше.</p>
+    <p>Но — на созвоне коммуникация не заканчивается. С каждым этапом реализации проекта дизайнер должен контролировать процесс, как заказчик данной идеи.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">Заключение</h1>
+    <p>Макета мечты не существует, ибо всегда есть вещи, с которыми нужно будет мириться. Но понимая код и грамотно донося техническое задание разработчику, мы будем приближаться к желаемому идеалу.</p>
+</div>

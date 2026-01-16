@@ -1,0 +1,11 @@
+.reveal {
+    opacity: 0 !important;
+    filter: blur(12px) !important;
+    transition: opacity 0.6s ease-out, 
+                filter 0.6s ease-out !important;
+}
+
+.visible {
+    opacity: 1 !important;
+    filter: blur(0px) !important;
+}

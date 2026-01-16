@@ -1,0 +1,26 @@
+.footerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 160px;
+    flex-direction: row;
+
+    text-align: left;
+}
+
+.footerContainer button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+@media (max-width: 620px) {
+    .footerContainer {
+        flex-direction: column;
+        
+        text-align: center;
+
+        gap: 16px;
+    }
+}

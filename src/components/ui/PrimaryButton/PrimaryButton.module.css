@@ -1,0 +1,26 @@
+.buttonPrimary {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--button-text-color);
+    background-color: var(--accent-color);
+    font-size: var(--main-text-size);
+    text-decoration: none;
+    line-height: 100%;
+    white-space: nowrap;
+
+    transition: all 0.1s ease;
+}
+
+.buttonPrimary:hover {
+    color: var(--button-text-color) !important;
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.buttonPrimary:active {
+    scale: 0.92;
+    transition: all 0.1s ease;
+}

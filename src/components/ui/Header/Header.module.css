@@ -1,0 +1,82 @@
+.header {
+    background-color: var(--bg-color);
+
+    width: 100%;
+    padding: 32px;
+    margin-bottom: 32vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  /* толщина рамки */
+  --bw: 1px;
+
+  background:
+    /* top */
+    repeating-linear-gradient(90deg, var(--stroke) 0 24px, transparent 24px 48px)
+      bottom / 100% var(--bw) no-repeat,
+    /* left */
+    repeating-linear-gradient(0deg, var(--stroke) 0 24px, transparent 24px 48px)
+      left / var(--bw) 100% no-repeat,
+    /* right */
+    repeating-linear-gradient(0deg, var(--stroke) 0 24px, transparent 24px 48px)
+      right / var(--bw) 100% no-repeat;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    height: 6px;
+    pointer-events: none;
+
+    background:
+    linear-gradient(var(--stroke), var(--stroke))
+        left center / 6px 6px no-repeat,
+    linear-gradient(var(--stroke), var(--stroke))
+        right center / 6px 6px no-repeat;
+}
+
+.topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    flex-wrap: wrap;
+}
+
+.row span {
+    margin-right: 8px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 12px;
+    row-gap: 2px;
+    flex-wrap: wrap;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+

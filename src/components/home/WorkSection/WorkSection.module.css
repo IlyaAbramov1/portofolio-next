@@ -1,0 +1,34 @@
+.workItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.workItemText {
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--secondary-text-color);
+
+    text-align: left;
+    text-decoration: none;
+}
+
+.workItemSubText {
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--thirdly-text-color); 
+
+    text-align: right;
+    text-wrap: nowrap;
+}
+
+@media (max-width: 620px) {
+    
+}

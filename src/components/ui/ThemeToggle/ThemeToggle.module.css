@@ -1,0 +1,25 @@
+.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg-color);
+    border: 1px solid var(--stroke);
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+}
+
+.themeToggle:hover {
+    border: 1px solid var(--thirdly-text-color);
+}
+
+.themeToggle img {
+    width: 16px;
+    height: 16px;   
+    object-fit: cover;
+
+    pointer-events: none;
+}

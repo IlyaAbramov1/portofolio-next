@@ -1,42 +1,315 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --h: 220;
+    --s: 10%;
+    --button-text-color: hsl(var(--h), var(--s), 97%);
+    --accent-color: hsl(var(--h), 100%, 50%);
+    --text-color: hsl(var(--h), var(--s), 4%);
+    --secondary-text-color: hsl(var(--h), var(--s), 20%);
+    --thirdly-text-color: hsl(var(--h), var(--s), 70%);
+    --fourthly-text-color: hsl(var(--h) var(--s) 80%);
+    --stroke: hsl(var(--h) var(--s) 80%);
+    --bg-color: hsl(var(--h) var(--s) 96%);
+    --secondary-bg-color: hsl(var(--h) var(--s) 90%);
+    --deep-bg-color: hsl(var(--h) var(--s) 98%);
+    --green-fill: hsl(120, 100%, 40%);
+
+    --title-text-size: 28px;
+    --title-text-line-height: 110%;
+    --main-text-size: 14px;
+    --main-text-line-height: 172%;
+    --main-text-letter-spacing: -0.04em;
+    --little-text-size: 12px;
+    --little-text-line-height: 140%;
+
+    --font-family-mono: 'JetBrains Mono', monospace;
+    --font-family-title-regular: 'EBGaramond-Regular', serif;
+    --font-family-quote: 'EBGaramond-Regular', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body.dark-theme {
+    --h: 230;
+    --s: 8%;
+    --accent-color: hsl(var(--h), 100%, 60%);
+    --button-text-color: hsl(var(--h), var(--s), 90%);
+    --text-color: hsl(var(--h), var(--s), 90%);
+    --secondary-text-color: hsl(var(--h), var(--s), 80%);
+    --thirdly-text-color: hsl(var(--h), var(--s), 40%);
+    --fourthly-text-color: hsl(var(--h) var(--s) 30%);
+    --stroke: hsl(var(--h) var(--s) 20%);
+    --bg-color: hsl(var(--h) var(--s) 6%);
+    --secondary-bg-color: hsl(var(--h) var(--s) 12%);
+    --deep-bg-color: hsl(var(--h) var(--s) 8%);
+    --green-fill: hsl(120, 100%, 40%);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'EBGaramond-Regular';
+    src: url(/fonts/EBGaramond-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'EBGaramond-Italic';
+    src: url(/fonts/EBGaramond-Italic.woff2) format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Кастомное выделение текста */
+::selection {
+    background-color: #0004FF;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #0004FF;
+    color: white;
+}
+
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font-family-mono);
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    color: var(--secondary-text-color);
+
+     /* Настройки рендеринга шрифта */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    
+    /* Дополнительные настройки для четкости */
+    font-synthesis: none;
+    font-variant-numeric: normal;
+    font-kerning: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-text-color) transparent;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* WebKit scrollbar styles */
+*::-webkit-scrollbar {
+    width: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-text-color);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--stroke);
+}
+
+.h1 {
+    font-family: var(--font-family-title-regular) !important;
+    font-style: normal;
+    font-size: 28px;
+    line-height: var(--title-text-line-height);
+    letter-spacing: -0.02em;
+    text-align: left;
+
+    color: var(--text-color);
+}
+
+.h2 {
+    font-family: var(--font-family-title-regular) !important;
+    font-style: normal;
+    font-size: 28px;
+    line-height: var(--title-text-line-height);
+    letter-spacing: -0.02em;
+    text-align: left;
+
+    color: var(--text-color);
+}
+
+.h2 sup {
+    font-size: var(--little-text-size);
+    line-height: var(--little-text-line-height);
+    letter-spacing: var(--text-letter-spacing);
+}
+
+.text {
+    font-size: var(--main-text-size);
+    line-height: var(--main-text-line-height);
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--secondary-text-color);
+
+    text-decoration: none;
+}
+
+.subText { 
+    font-size: var(--main-text-size);
+    line-height: 140%;
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    color: var(--thirdly-text-color);   
+}
+
+.appBody {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--bg-color);
+
+    background-image: url(/bg-light.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-size: var(--main-text-size);
+    letter-spacing: var(--text-letter-spacing);
+    line-height: var(--main-text-line-height);
+    text-align: justify;
+
+    color: var(--text-color);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .appBody {
+    background-attachment: scroll;
   }
+}
+
+.appBody.dark-theme {
+    background-image: url(/bg-dark.png);
+}
+
+.page {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+    padding: 0 12px;
+}
+
+.link {
+    font-size: var(--main-text-size);
+    text-decoration: underline;
+    color: var(--accent-color);
+
+    cursor: pointer;
+}
+
+.link:hover {
+    text-transform: uppercase;
+}
+
+.link:active {
+    text-decoration: uppercase;
+    color: var(--accent-color);
+}
+
+.innerContainer {
+    margin: 0 auto;
+    padding: 40px;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    background-color: var(--bg-color);
+}
+
+.innerContainer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  /* толщина рамки */
+  --bw: 1px;
+
+  background:
+    /* top */
+    repeating-linear-gradient(90deg, var(--stroke) 0 24px, transparent 24px 48px)
+      top / 100% var(--bw) no-repeat,
+    /* left */
+    repeating-linear-gradient(0deg, var(--stroke) 0 24px, transparent 24px 48px)
+      left / var(--bw) 100% no-repeat,
+    /* right */
+    repeating-linear-gradient(0deg, var(--stroke) 0 24px, transparent 24px 48px)
+      right / var(--bw) 100% no-repeat;
+}
+
+.innerContainer::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: -2px;
+    height: 6px;
+    pointer-events: none;
+
+    background:
+    linear-gradient(var(--stroke), var(--stroke))
+        left center / 6px 6px no-repeat,
+    linear-gradient(var(--stroke), var(--stroke))
+        right center / 6px 6px no-repeat;
+}
+
+.hashtagNew {
+    color: var(--green-fill) !important;
+    padding-left: 12px;
+    position: relative;
+
+    font-size: var(--main-text-size);
+    line-height: 175%;
+    letter-spacing: var(--main-text-letter-spacing);
+    text-wrap: pretty;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.hashtagNew::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    background-color: var(--green-fill);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 620px) {
+    .innerContainer {
+        padding: 32px 24px;
+    }
 }
