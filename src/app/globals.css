@@ -199,6 +199,12 @@ body.dark-theme {
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  .appBody {
+    background-attachment: scroll;
+  }
+}
+
 .appBody.dark-theme {
     background-image: url(/bg-dark.png);
 }
