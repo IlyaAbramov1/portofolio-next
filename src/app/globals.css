@@ -193,18 +193,15 @@ body.dark-theme {
     color: var(--text-color);
 }
 
-@supports (-webkit-touch-callout: none) {
-  .appBody {
-    background-attachment: scroll;
-  }
+@media (max-width: 768px) {
+    .appBody {
+        background-attachment: scroll;
+        background-size: auto;
+        background-position: top center;
+        background-repeat: repeat;
+    }
 }
-
-@supports (-webkit-touch-callout: none) {
-  .appBody {
-    background-attachment: scroll;
-  }
-}
-
+   
 .appBody.dark-theme {
     background-image: url(/bg-dark.png);
 }
