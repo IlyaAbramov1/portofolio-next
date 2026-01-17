@@ -8,6 +8,8 @@
     --thirdly-text-color: hsl(var(--h), var(--s), 70%);
     --fourthly-text-color: hsl(var(--h) var(--s) 80%);
     --stroke: hsl(var(--h) var(--s) 80%);
+    --grid-size: 24px;
+    --grid-line: hsl(var(--h) var(--s) 92%);
     --bg-color: hsl(var(--h) var(--s) 96%);
     --secondary-bg-color: hsl(var(--h) var(--s) 90%);
     --deep-bg-color: hsl(var(--h) var(--s) 98%);
@@ -36,6 +38,7 @@ body.dark-theme {
     --thirdly-text-color: hsl(var(--h), var(--s), 40%);
     --fourthly-text-color: hsl(var(--h) var(--s) 30%);
     --stroke: hsl(var(--h) var(--s) 20%);
+    --grid-line: hsl(var(--h) var(--s) 10%);
     --bg-color: hsl(var(--h) var(--s) 6%);
     --secondary-bg-color: hsl(var(--h) var(--s) 12%);
     --deep-bg-color: hsl(var(--h) var(--s) 8%);
@@ -178,12 +181,13 @@ body.dark-theme {
     padding: 0;
 
     background-color: var(--bg-color);
-
-    background-image: url(/bg-light.png);
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-attachment: fixed;
-    background-size: cover;
+    background-size: var(--grid-size) var(--grid-size);
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 
     font-size: var(--main-text-size);
     letter-spacing: var(--text-letter-spacing);
@@ -196,14 +200,10 @@ body.dark-theme {
 @media (max-width: 768px) {
     .appBody {
         background-attachment: scroll;
-        background-size: auto;
-        background-position: top center;
+        background-size: var(--grid-size) var(--grid-size);
+        background-position: center;
         background-repeat: repeat;
     }
-}
-   
-.appBody.dark-theme {
-    background-image: url(/bg-dark.png);
 }
 
 .page {
