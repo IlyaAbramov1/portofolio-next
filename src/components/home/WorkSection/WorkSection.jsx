@@ -1,4 +1,5 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
+import MorphText from "@/components/ui/MorphText/MorphText";
 
 import styles from "./WorkSection.module.css"
 import Reveal from "@/components/ui/Reveal/Reveal";
@@ -40,8 +41,12 @@ export default function WorkSection() {
             {workItems.map((item) => (
                 <Reveal key={item.id}>
                     <div className={styles.workItem}>
-                        <div className={styles.workItemText}>{item.workPlace}</div>
-                        <div className={styles.workItemSubText}>{item.workPeriod}</div>
+                        <MorphText>
+                            <div className={styles.workItemText}>{item.workPlace}</div>
+                        </MorphText>
+                        <MorphText>
+                            <div className={styles.workItemSubText}>{item.workPeriod}</div>
+                        </MorphText>
                     </div>
                 </Reveal>
             ))}

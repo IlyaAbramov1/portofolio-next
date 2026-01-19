@@ -4,6 +4,7 @@ import Reveal from "@/components/ui/Reveal/Reveal.jsx";
 import styles from "./BlockHeader.module.css"
 
 import { useState, useEffect } from "react"
+import MorphText from "../MorphText/MorphText";
 
 export default function BlockHeader({
     iconName,
@@ -39,7 +40,11 @@ export default function BlockHeader({
                     </div>
                     <h2 className="h2">{title}</h2>
                 </div>
-                {subtitle ? (<a href={subtitleLink} className="link" download={subtitleDownloadFile}>{subtitle}</a>): null }
+                {subtitle ? (
+                    <MorphText>
+                        <a href={subtitleLink} className="link" download={subtitleDownloadFile}>{subtitle}</a>
+                    </MorphText>
+                    ): null }
             </div>
         </Reveal>
     )

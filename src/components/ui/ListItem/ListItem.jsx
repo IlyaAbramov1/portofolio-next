@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Reveal from "../Reveal/Reveal";
+import MorphText from "../MorphText/MorphText";
+
 import styles from "./ListItem.module.css";
 
 export default function ListItem({
@@ -39,7 +41,7 @@ export default function ListItem({
                             ) : null}
                         </div>
                     </a>
-                ) : (
+            ) : (
                     <Link href={href} className={styles.listItemContainer}>
                         {cover ? (
                             <img className={styles.listItemCover} src={cover} alt="" />

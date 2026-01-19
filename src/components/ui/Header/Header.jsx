@@ -4,6 +4,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle"
 import Reveal from "@/components/ui/Reveal/Reveal";
 
 import styles from "./Header.module.css";
+import MorphText from "../MorphText/MorphText";
 
 function LinksRow({ label, links }) {
     if (!label && (!links || links.length === 0)) return null;
@@ -15,15 +16,16 @@ function LinksRow({ label, links }) {
                 {links && links.length > 0 ? (
                     <nav className={styles.links} aria-label={label || "Навигация"}>
                         {links.map((l) => (
-                            <a
-                                key={`${l.href}-${l.label}`}
-                                className="link"
-                                href={l.href}
-                                target={l.external ? "_blank" : undefined}
-                                rel={l.external ? "noreferrer" : undefined}
-                            >
-                                {l.label}
-                            </a>
+                            <MorphText key={`${l.href}-${l.label}`}>
+                                <a
+                                    className="link"
+                                    href={l.href}
+                                    target={l.external ? "_blank" : undefined}
+                                    rel={l.external ? "noreferrer" : undefined}
+                                >
+                                    {l.label}
+                                </a>
+                            </MorphText>
                         ))}
                     </nav>
                 ) : null}

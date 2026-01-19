@@ -1,6 +1,8 @@
 "use client"
 
 import Reveal from "@/components/ui/Reveal/Reveal"
+import MorphText from "../MorphText/MorphText"
+
 import styles from "./Footer.module.css"
 
 export default function AboutSection() {
@@ -16,7 +18,9 @@ export default function AboutSection() {
             <Reveal>
                     <div className={styles.footerContainer}>
                         <p className="subText">Designed and developed by Ilya Abramov. Last update Jan 25</p>
-                        <button type="button" onClick={handleClick} className="link">Наверх↑</button>
+                        <MorphText>
+                            <button type="button" onClick={handleClick} className="link">Перейти наверх↑</button>
+                        </MorphText>
                     </div>
             </Reveal>   
         </footer>    
