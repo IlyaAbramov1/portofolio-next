@@ -21,10 +21,10 @@ export default function HomePage() {
                 ]}
                 secondaryLabel="А меня можно найти тут:"
                 secondaryLinks={[
-                    { href: "mailto:you@example.com", label: "Email↗" },
-                    { href: "https://t.me/...", label: "Telegram↗", external: true },
-                    { href: "https://dprofile.ru/...", label: "Dprofile↗", external: true },
-                    { href: "https://instagram.com/...", label: "Insta↗", external: true },
+                    { href: "mailto:ilyaabramov29@gmail.com", label: "Email↗" },
+                    { href: "http://t.me/abramovdesiqn", label: "Telegram↗", external: true },
+                    { href: "https://dprofile.ru/ilyaabramov", label: "Dprofile↗", external: true },
+                    { href: "https://instagram.com/abramovdesiqn", label: "Insta↗", external: true },
                 ]}
             />
             <AboutSection />

@@ -31,7 +31,7 @@ const textsItems = [
 
 export default function ProjectsSection() {
     return (
-        <section id="projects" className="innerContainer">
+        <section id="texts" className="innerContainer">
             <BlockHeader
                 iconName="texts"
                 title="Тексты"

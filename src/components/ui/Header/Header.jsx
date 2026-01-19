@@ -46,7 +46,7 @@ export default function Header({
             <Reveal>
                 <div className={styles.topRow}>
                     <div className={styles.logo}>
-                        <a href="`/`" aria-label="Логотип">
+                        <a href="/" aria-label="Логотип">
                             <img src="/main-logo.svg" alt="" />
                         </a>
                     </div>

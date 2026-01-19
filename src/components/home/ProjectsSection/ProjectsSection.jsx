@@ -1,18 +1,23 @@
+import Link from "next/link";
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import ListItem from "@/components/ui/ListItem/ListItem";
+import MorphText from "@/components/ui/MorphText/MorphText";
+import Reveal from "@/components/ui/Reveal/Reveal";
+
+import styles from "./ProjectsSection.module.css";
 
 const projectsItems = [
     {
-    cover: "/projects/preview/Caps.webp",
+    cover: "/projects/preview/Turbach.webp",
     title: "Турбач",
     description: "Веб-спецпроект | 2025",
     isNew: true,
-    linkText: "Подробнее ↗",
+    linkText: "Открыть ↗",
     href: "https://sirena.sports.ru/turbach/",
     },
     {
     cover: "/projects/preview/Caps.webp",
-    title: "Caps",
+    title: "Кэпсы",
     description: "Веб-спецпроект | 2025",
     linkText: "Открыть ↗",
     href: "https://specials.sports.ru/caps/",
@@ -29,7 +34,7 @@ const projectsItems = [
     title: "Золотая коллекция",
     description: "Веб-спецпроект | 2024",
     linkText: "Открыть ↗",
-    href: "https://2023zima.ru/",
+    href: "https://www.sports.ru/specials/media-collection/",
     },
     {
     cover: "/projects/preview/dodo film.webp",
@@ -67,6 +72,13 @@ export default function ProjectsSection() {
                     linkText={item.linkText}
                 />
             ))}
+            <Reveal>
+                <MorphText>
+                    <Link href="/projects" className={`link ${styles.allProjectsLink}`}>
+                        Все проекты ↗
+                    </Link>
+                </MorphText>
+            </Reveal>
         </section>
     )
 }

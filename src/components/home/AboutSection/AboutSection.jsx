@@ -16,7 +16,7 @@ export default function AboutSection() {
                 <p className="text">
                     Сейчас я в креативной студии{" "}
                     <MorphText>
-                        <a href="https://sirena.sports.ru/" className="link" target="_blank">
+                        <a href="https://sirena.team" className="link" target="_blank">
                             Сирена↗
                         </a>
                     </MorphText>
