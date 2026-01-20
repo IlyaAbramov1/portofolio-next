@@ -21,6 +21,7 @@ export const createASCIIShift = (el, opts = {}) => {
     let animId = null;
     let isHover = false;
     let origW = null;
+    let origDisplay = null;
 
     // options
     const cfg = {
@@ -28,6 +29,7 @@ export const createASCIIShift = (el, opts = {}) => {
         chars: '-─~+=*π""┐┌┘┴┬╗╔╝╚╬╠╣╩╦║░▒▓█▄▀▌▐■!?&#$@0123456789*',
         preserveSpaces: true,
         spread: 0.3,
+        widthBuffer: 4,
         ...opts,
     };
 
@@ -118,6 +120,10 @@ export const createASCIIShift = (el, opts = {}) => {
             el.style.width = "";
             origW = null;
         }
+        if (origDisplay !== null) {
+            el.style.display = origDisplay;
+            origDisplay = null;
+        }
         isAnim = false;
     };
 
@@ -129,7 +135,12 @@ export const createASCIIShift = (el, opts = {}) => {
 
         // Preserve original width to prevent layout shifts
         if (origW === null) {
-            origW = el.getBoundingClientRect().width;
+            const computedDisplay = window.getComputedStyle(el).display;
+            if (computedDisplay === "inline") {
+                origDisplay = el.style.display;
+                el.style.display = "inline-block";
+            }
+            origW = Math.ceil(el.getBoundingClientRect().width + cfg.widthBuffer);
             el.style.width = `${origW}px`;
         }
 
@@ -201,6 +212,10 @@ export const createASCIIShift = (el, opts = {}) => {
         if (origW !== null) {
             el.style.width = "";
             origW = null;
+        }
+        if (origDisplay !== null) {
+            el.style.display = origDisplay;
+            origDisplay = null;
         }
         stop();
     };
