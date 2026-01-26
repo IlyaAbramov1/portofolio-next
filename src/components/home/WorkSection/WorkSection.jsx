@@ -6,24 +6,24 @@ import Reveal from "@/components/ui/Reveal/Reveal";
 
 const workItems = [
     {
-    id: 1,
-    workPlace: "UI дизайнер в Сирена // Спортс",
-    workPeriod: "2024 — н.в.",
+        id: 1,
+        workPlace: "UI дизайнер в Сирена // Спортс",
+        workPeriod: "2024 — н.в.",
     },
     {
-    id: 2,
-    workPlace: "Коммуникационный дизайнер в ТОМАТ // Додо",
-    workPeriod: "2021 — 2024",
+        id: 2,
+        workPlace: "Коммуникационный дизайнер в ТОМАТ // Додо",
+        workPeriod: "2021 — 2024",
     },
     {
-    id: 3,
-    workPlace: "Дизайнер-стажёр в Tactics&Practice",
-    workPeriod: "2019",
+        id: 3,
+        workPlace: "Дизайнер-стажёр в Tactics&Practice",
+        workPeriod: "2019",
     },
     {
-    id: 4,
-    workPlace: "Дизайнер на фрилансе",
-    workPeriod: "2019 — н.в.",
+        id: 4,
+        workPlace: "Дизайнер на фрилансе",
+        workPeriod: "2019 — н.в.",
     },
 ];
 
@@ -41,12 +41,8 @@ export default function WorkSection() {
             {workItems.map((item) => (
                 <Reveal key={item.id}>
                     <div className={styles.workItem}>
-                        <MorphText>
-                            <div className={styles.workItemText}>{item.workPlace}</div>
-                        </MorphText>
-                        <MorphText>
-                            <div className={styles.workItemSubText}>{item.workPeriod}</div>
-                        </MorphText>
+                        <div className={styles.workItemText}>{item.workPlace}</div>
+                        <div className={styles.workItemSubText}>{item.workPeriod}</div>
                     </div>
                 </Reveal>
             ))}
