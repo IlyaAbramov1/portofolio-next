@@ -29,7 +29,7 @@ export const createASCIIShift = (el, opts = {}) => {
         chars: '-─~+=*π""┐┌┘┴┬╗╔╝╚╬╠╣╩╦║░▒▓█▄▀▌▐■!?&#$@0123456789*',
         preserveSpaces: true,
         spread: 0.3,
-        widthBuffer: 4,
+        widthBuffer: 2,
         ...opts,
     };
 
@@ -55,6 +55,16 @@ export const createASCIIShift = (el, opts = {}) => {
         });
 
         if (!isAnim) start();
+    };
+
+    /**
+     * Triggers a wave from a fixed position (defaults to center)
+     */
+    const triggerWaveAt = (ratio = 0.5) => {
+        if (!origTxt.length) return;
+        const pos = Math.round(origTxt.length * ratio);
+        cursorPos = Math.max(0, Math.min(pos, origTxt.length - 1));
+        startWave();
     };
 
     /**
@@ -243,12 +253,21 @@ export const createASCIIShift = (el, opts = {}) => {
     init();
 
     // public API
-    return { updateTxt, resetToOrig, destroy };
+    return { updateTxt, resetToOrig, destroy, triggerWaveAt };
 };
 
-export default function MorphText({ children, options }) {
+const getTextContent = (node) => {
+    if (node === null || node === undefined || typeof node === "boolean") return "";
+    if (typeof node === "string" || typeof node === "number") return String(node);
+    if (Array.isArray(node)) return node.map(getTextContent).join("");
+    if (isValidElement(node)) return getTextContent(node.props.children);
+    return "";
+};
+
+export default function MorphText({ children, options, active = false }) {
     const elRef = useRef(null);
     const instanceRef = useRef(null);
+    const textValue = getTextContent(children);
 
     useEffect(() => {
         const el = elRef.current;
@@ -265,10 +284,18 @@ export default function MorphText({ children, options }) {
     }, [options]);
 
     useEffect(() => {
-        const el = elRef.current;
-        if (!el || !instanceRef.current) return;
-        instanceRef.current.updateTxt(el.textContent || "");
-    }, [children]);
+        if (!instanceRef.current) return;
+        instanceRef.current.updateTxt(textValue);
+    }, [textValue]);
+
+    useEffect(() => {
+        if (!instanceRef.current) return;
+        if (active) {
+            instanceRef.current.triggerWaveAt();
+        } else {
+            instanceRef.current.resetToOrig();
+        }
+    }, [active]);
 
     if (isValidElement(children)) {
         return cloneElement(children, { ref: elRef });

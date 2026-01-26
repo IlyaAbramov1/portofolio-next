@@ -7,8 +7,9 @@ const projects = [
         cover: "/projects/preview/Turbach.webp",
         title: "Турбач",
         description: "Веб-спецпроект | 2025",
+        isNew: true,
         linkText: "Открыть ↗",
-        href: "https://sirena.sports.ru/turbach/",
+        href: "https://sirena.sports.ru/turbach/"
     },
     {
         cover: "/projects/preview/Caps.webp",
@@ -41,7 +42,7 @@ const projects = [
     {
         cover: "/projects/preview/1970_graphic.webp",
         title: "1.9.7.0. Искусство",
-        description: "1970 графика искусство — Графика | 2024",
+        description: "Графика | 2024",
         href: "https://dprofile.ru/case/73460/1970-iskusstvo-art-project",
         linkText: "Открыть ↗",
     },
@@ -62,7 +63,7 @@ const projects = [
     {
         cover: "/projects/preview/dodo film.webp",
         title: "Фильм ДОДО: От и До",
-        description: "ДОДО: От и До — Моушн-дизайн | 2024",
+        description: "Моушн-дизайн | 2024",
         href: "https://vk.com/dodosamara?z=video-37207433_456240388%2Fvideos-37207433%2Fpl_-37207433_-2",
         linkText: "Открыть ↗",
     },
@@ -83,35 +84,35 @@ const projects = [
     {
         cover: "/projects/preview/Daily Poster 3.webp",
         title: "Дейли постеры. Сезон 3",
-        description: "Звезда графики — Графика | Июль_23 → Октябрь_23",
+        description: "Июль_23 → Октябрь_23",
         href: "https://dprofile.ru/case/70346/ezednevnye-postery-sezon-3",
         linkText: "Открыть ↗",
     },
     {
         cover: "/projects/preview/Daily Poster 2.webp",
         title: "Дейли постеры. Сезон 2",
-        description: "Звезда графики — Графика | Апрель 2023 → Июнь 2023",
+        description: "Апрель 2023 → Июнь 2023",
         href: "https://dprofile.ru/case/47139/ezednevnye-postery-sezon-2",
         linkText: "Открыть ↗",
     },
     {
         cover: "/projects/preview/Makbush.webp",
         title: "МАКБУШ Кофе",
-        description: "Звезда графики — Брендинг | 2023",
+        description: "Брендинг | 2023",
         href: "https://dprofile.ru/case/44314/makbush-rebranding-identity",
         linkText: "Открыть ↗",
     },
     {
         cover: "/projects/preview/kommunalka.webp",
         title: "Коммуналка",
-        description: "Звезда графики — Айдентика | 2023",
+        description: "Айдентика | 2023",
         href: "https://dprofile.ru/case/38691/dizain-kommunalka-event-identity-showreel",
         linkText: "Открыть ↗",
     },
     {
         cover: "/projects/preview/makbush-film.webp",
         title: "Фильм МакБуш: 20 лет",
-        description: "Сыктывкар - Столица Кофе — Моушн-дизайн | 2023",
+        description: "Моушн-дизайн | 2023",
         href: "https://vk.com/clubmakbush?z=video-151870760_456239174%2Fvideos-151870760%2Fpl_-151870760_-2",
         linkText: "Открыть ↗",
     },
@@ -146,7 +147,7 @@ export default function ProjectsPage() {
                 <div className="text">На странице представлены проекты, начиная с 2022 года.</div>
             </div>
         ),
-        secondaryLinks: [{ label: "На главную", href: "/", external: false }],
+        secondaryLinks: [{ label: "←На главную", href: "/", external: false }],
     };
 
     return (
@@ -159,6 +160,7 @@ export default function ProjectsPage() {
                     description={item.description}
                     href={item.href}
                     linkText={item.linkText}
+                    isNew={item.is}
                 />
             ))}
         </Prose>

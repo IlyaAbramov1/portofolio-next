@@ -11,11 +11,11 @@ export default function Prose({
     return (
         <div className={styles.prose}>
             <Header {...headerProps} />
-            <article className="innerContainer">
+            <section className="innerContainer">
                 <div className={styles.articleContent}>
                     {children}
                 </div>
-            </article>
+            </section>
             <Footer />
         </div>
     )
