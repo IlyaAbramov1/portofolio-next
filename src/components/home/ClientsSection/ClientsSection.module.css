@@ -1,0 +1,67 @@
+.marquee {
+    width: auto;
+    overflow: hidden;
+    margin-inline: -39px;
+}
+
+.marqueeTrack {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 12px 0;
+    animation: marquee 28s linear infinite;
+    will-change: transform;
+}
+
+.clientLogo {
+    position: relative;
+    width: 120px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.clientLogo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logoDark {
+    opacity: 0;
+}
+
+:global(body.dark-theme) .logoLight {
+    opacity: 0;
+}
+
+:global(body.dark-theme) .logoDark {
+    opacity: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 18px));
+    }
+}
+
+@media (max-width: 620px) {
+    .marquee {
+         margin-inline: -23px;
+    }
+
+    .marqueeTrack {
+        gap: 28px;
+        animation-duration: 22s;
+    }
+
+    .clientLogo {
+        width: 100px;
+        height: 24px;
+    }
+}

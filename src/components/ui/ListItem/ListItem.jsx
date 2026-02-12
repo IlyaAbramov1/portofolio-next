@@ -12,6 +12,8 @@ export default function ListItem({
     title,
     description,
     isNew = false,
+    hasMedal = false,
+    medalLabel = "",
     linkText,
     href
 }) {
@@ -32,19 +34,31 @@ export default function ListItem({
                 </div>
             ) : null}
             <div className={styles.listItemContent}>
-                <div className={styles.listItemText}>
-                    <MorphText active={isHover}>
-                        <div className={styles.listItemTitle}>{title}</div>
-                    </MorphText>
-                    <div className={styles.listItemDescription}>
-                        {isNew ? (
-                            <MorphText active={isHover}>
-                                <div className="hashtagNew">Новое</div>
-                            </MorphText>
+                <div className={styles.listMedalAndText}>
+                        {hasMedal ? (
+                            <div className={styles.medalWrap} aria-hidden="true">
+                                {medalLabel ? (
+                                    <span className={styles.medalBadge}>{medalLabel}</span>
+                                ) : null}
+                                <span className={styles.coin} />
+                            </div>
                         ) : null}
+                    <div className={styles.listItemText}>
                         <MorphText active={isHover}>
-                            <div className={styles.listItemSubText}>{description}</div>
+                            <div className={styles.listItemTitleRow}>
+                                <div className={styles.listItemTitle}>{title}</div>
+                            </div>
                         </MorphText>
+                        <div className={styles.listItemDescription}>
+                            {isNew ? (
+                                <MorphText active={isHover}>
+                                    <div className="hashtagNew">Новое</div>
+                                </MorphText>
+                            ) : null}
+                            <MorphText active={isHover}>
+                                <div className={styles.listItemSubText}>{description}</div>
+                            </MorphText>
+                        </div>
                     </div>
                 </div>
                 {linkText ? (

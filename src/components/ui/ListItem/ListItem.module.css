@@ -8,6 +8,8 @@
     gap: 12px;
 
     text-decoration: none;
+
+    margin-bottom: 4px;
 }
 
 .listItemContainer:hover {
@@ -42,7 +44,7 @@
 }
 
 .listItemContainer:hover .listItemCover {
-    transform: translate(8px, -8px);
+    transform: translate(6px, -6px);
 }
 
 
@@ -61,6 +63,19 @@
     gap: 0px;
 }
 
+.listMedalAndText {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.listItemTitleRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+}
+
 .listItemTitle {
     font-size: var(--main-text-size);
     line-height: var(--main-text-line-height);
@@ -71,6 +86,51 @@
 
     text-decoration: none;
     text-align: left;
+}
+
+.medalWrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.coin {
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: pixelated;
+    animation: coinSpin 0.92s steps(1) infinite;
+}
+
+.medalBadge {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 6px);
+    padding: 3px 8px;
+    border: 1px solid var(--stroke);
+    background-color: var(--deep-bg-color);
+    color: var(--secondary-text-color);
+    font-size: var(--little-text-size);
+    line-height: var(--little-text-line-height);
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-transform: none;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+    z-index: 2;
+}
+
+.medalWrap:hover .medalBadge,
+.medalWrap:focus-visible .medalBadge {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
 
 .listItemSubText {
@@ -111,4 +171,32 @@
     color: var(--button-text-color) !important;
     background-color: var(--accent-color);
     text-transform: uppercase;
+}
+
+@keyframes coinSpin {
+    0% { background-image: url("/projects/coin/medal_00.png"); }
+    4.1667% { background-image: url("/projects/coin/medal_01.png"); }
+    8.3333% { background-image: url("/projects/coin/medal_02.png"); }
+    12.5% { background-image: url("/projects/coin/medal_03.png"); }
+    16.6667% { background-image: url("/projects/coin/medal_04.png"); }
+    20.8333% { background-image: url("/projects/coin/medal_05.png"); }
+    25% { background-image: url("/projects/coin/medal_06.png"); }
+    29.1667% { background-image: url("/projects/coin/medal_07.png"); }
+    33.3333% { background-image: url("/projects/coin/medal_08.png"); }
+    37.5% { background-image: url("/projects/coin/medal_09.png"); }
+    41.6667% { background-image: url("/projects/coin/medal_10.png"); }
+    45.8333% { background-image: url("/projects/coin/medal_11.png"); }
+    50% { background-image: url("/projects/coin/medal_12.png"); }
+    54.1667% { background-image: url("/projects/coin/medal_13.png"); }
+    58.3333% { background-image: url("/projects/coin/medal_14.png"); }
+    62.5% { background-image: url("/projects/coin/medal_15.png"); }
+    66.6667% { background-image: url("/projects/coin/medal_16.png"); }
+    70.8333% { background-image: url("/projects/coin/medal_17.png"); }
+    75% { background-image: url("/projects/coin/medal_18.png"); }
+    79.1667% { background-image: url("/projects/coin/medal_19.png"); }
+    83.3333% { background-image: url("/projects/coin/medal_20.png"); }
+    87.5% { background-image: url("/projects/coin/medal_21.png"); }
+    91.6667% { background-image: url("/projects/coin/medal_22.png"); }
+    95.8333% { background-image: url("/projects/coin/medal_23.png"); }
+    100% { background-image: url("/projects/coin/medal_00.png"); }
 }

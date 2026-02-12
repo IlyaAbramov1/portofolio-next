@@ -3,9 +3,11 @@ import styles from "./HomePage.module.css";
 import Header from "@/components/ui/Header/Header"
 import AboutSection from "./AboutSection/AboutSection";
 import WorkSection from "./WorkSection/WorkSection";
+import ClientsSection from "./ClientsSection/ClientsSection";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import TextsSection from "./TextsSection/TextsSection";
 import ContactSection from "./ContactSection/ContactSection";
+import FollowSection from "./FollowSection/FollowSection";
 import Footer from "@/components/ui/Footer/Footer"
 
 export default function HomePage() {
@@ -16,6 +18,7 @@ export default function HomePage() {
                 primaryLinks={[
                     { href: "#aboutMe", label: "Обо мне↗"},
                     { href: "#work", label: "Работа↗"}, 
+                    { href: "#clients", label: "Клиенты↗"}, 
                     { href: "#projects", label: "Проекты↗"}, 
                     { href: "#texts", label: "Тексты↗"}, 
                 ]}
@@ -28,7 +31,9 @@ export default function HomePage() {
                 ]}
             />
             <AboutSection />
+            <FollowSection />
             <WorkSection />
+            <ClientsSection />
             <ProjectsSection />
             <TextsSection />
             <ContactSection />

@@ -1,0 +1,233 @@
+[
+  {
+    "id": "sports-yearbook-2025",
+    "cover": "/projects/preview/Yearly.webp",
+    "title": "Итоги года Спортса 2025",
+    "description": "Веб-спецпроект | 2025",
+    "isNew": true,
+    "linkText": "Открыть ↗",
+    "href": "https://sports.ru/yearbook/#/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "turbach",
+    "cover": "/projects/preview/Turbach.webp",
+    "title": "Турбач",
+    "description": "Веб-спецпроект | 2025",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://sirena.sports.ru/turbach/",
+    "hasMedal": true,
+    "medalLabel": "DProfile Маркетинг"
+  },
+  {
+    "id": "caps",
+    "cover": "/projects/preview/Caps.webp",
+    "title": "Кэпсы",
+    "description": "Веб-спецпроект | 2025",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://specials.sports.ru/caps/",
+    "hasMedal": true,
+    "medalLabel": "DProfile Маркетинг"
+  },
+  {
+    "id": "zima-2023",
+    "cover": "/projects/preview/2023zima.webp",
+    "title": "2.0.2.3. зима",
+    "description": "Веб-сайт | 2025",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://2023zima.ru/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "makbush-coffee",
+    "cover": "/projects/preview/Makbush.webp",
+    "title": "МАКБУШ Кофе",
+    "description": "Брендинг | 2023",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/44314/makbush-rebranding-identity",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "dodo-film",
+    "cover": "/projects/preview/dodo film.webp",
+    "title": "Фильм ДОДО: От и До",
+    "description": "Моушн-дизайн | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://vk.com/dodosamara?z=video-37207433_456240388%2Fvideos-37207433%2Fpl_-37207433_-2",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "daily-posters-3",
+    "cover": "/projects/preview/Daily Poster 3.webp",
+    "title": "Дейли постеры. Сезон 3",
+    "description": "Июль_23 → Октябрь_23",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/70346/ezednevnye-postery-sezon-3",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "hearts-league",
+    "cover": "/projects/preview/RPL.webp",
+    "title": "Лига пламенных сердце",
+    "description": "Веб-спецпроект | 2025",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://specials.sports.ru/hearts-league/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "blast-austin",
+    "cover": "/projects/preview/Blast Austin.webp",
+    "title": "Blast Austin",
+    "description": "Веб-спецпроект | 2025",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://sirena.sports.ru/triumph-major/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "1970-art",
+    "cover": "/projects/preview/1970_graphic.webp",
+    "title": "1.9.7.0. Искусство",
+    "description": "Графика | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/73460/1970-iskusstvo-art-project",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "bb-dacha-belgrad",
+    "cover": "/projects/preview/BB Dacha.webp",
+    "title": "BetBoom Dacha Belgrad Test",
+    "description": "Веб-спецпроект | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://specials.sports.ru/invite-dacha/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "olimp-predictor",
+    "cover": "/projects/preview/Olimp Predictor.webp",
+    "title": "Olimp ВХЛ И МХЛ Предиктор",
+    "description": "Продукт | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://t.me/prognoznahockeyBot/expert",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "gold-collection",
+    "cover": "/projects/preview/Gold_collection.webp",
+    "title": "Золотая коллекция",
+    "description": "Веб-спецпроект | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://www.sports.ru/specials/media-collection/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "mahjong",
+    "cover": "/projects/preview/Mahjong.webp",
+    "title": "Mahjong",
+    "description": "Веб-спецпроект | 2024",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://specials-stage.cdn.sports.ru/cs-mahjong/",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "daily-posters-3",
+    "cover": "/projects/preview/Daily Poster 3.webp",
+    "title": "Дейли постеры. Сезон 3",
+    "description": "Июль_23 → Октябрь_23",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/70346/ezednevnye-postery-sezon-3",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "daily-posters-2",
+    "cover": "/projects/preview/Daily Poster 2.webp",
+    "title": "Дейли постеры. Сезон 2",
+    "description": "Апрель 2023 → Июнь 2023",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/47139/ezednevnye-postery-sezon-2",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "kommunalka",
+    "cover": "/projects/preview/kommunalka.webp",
+    "title": "Коммуналка",
+    "description": "Айдентика | 2023",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/38691/dizain-kommunalka-event-identity-showreel",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "makbush-film",
+    "cover": "/projects/preview/makbush-film.webp",
+    "title": "Фильм МакБуш: 20 лет",
+    "description": "Моушн-дизайн | 2023",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://vk.com/clubmakbush?z=video-151870760_456239174%2Fvideos-151870760%2Fpl_-151870760_-2",
+    "hasMedal": false,
+    "medalLabel": ""
+  },
+  {
+    "id": "daily-posters-1",
+    "cover": "/projects/preview/Daily Poster 1.webp",
+    "title": "Дейли постеры. Сезон 1",
+    "description": "Графика | Январь 2023 → Май 2023",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/29620/ezednevnye-postery-sezon-1",
+    "hasMedal": true,
+    "medalLabel": "DProfile UI-design"
+  },
+  {
+    "id": "tomat-branding",
+    "cover": "/projects/preview/tomat_branding.webp",
+    "title": "Tomat брендинг",
+    "description": "Tomat Agency — Брендинг | 2022",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/16433/tomat-branding",
+    "hasMedal": true,
+    "medalLabel": "DProfile Графика"
+  },
+  {
+    "id": "tomat-showreel",
+    "cover": "/projects/preview/tomat_showreel.webp",
+    "title": "TOMAT SHOWREEL",
+    "description": "Моушн-дизайн | 2022",
+    "isNew": false,
+    "linkText": "Открыть ↗",
+    "href": "https://dprofile.ru/case/9668/tomat-2022-showreel",
+    "hasMedal": true,
+    "medalLabel": "DProfile Анимация"
+  }
+]

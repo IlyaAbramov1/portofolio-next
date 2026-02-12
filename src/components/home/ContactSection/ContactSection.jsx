@@ -17,13 +17,17 @@ export default function AboutSection() {
             <Reveal>    
                 <div className={styles.rowSection}>
                     <p className="subText">Email</p>
-                    <a className="link" href="mailto:ilyaabramov29@gmail.com" target="_blank">ilyaabramov29@gmail.com↗</a>
+                    <MorphText>
+                        <a className="link" href="mailto:ilyaabramov29@gmail.com" target="_blank">ilyaabramov29@gmail.com↗</a>
+                    </MorphText>
                 </div>
             </Reveal>
             <Reveal>
                 <div className={styles.rowSection}>
                     <p className="subText">Telegram</p>
-                    <a className="link" href="https://t.me/abramovdesiqn" target="_blank">@abramovdesiqn↗</a>
+                    <MorphText>
+                        <a className="link" href="https://t.me/abramovdesiqn" target="_blank">@abramovdesiqn↗</a>
+                    </MorphText>
                 </div>
             </Reveal>
         </section>

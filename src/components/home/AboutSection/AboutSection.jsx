@@ -14,16 +14,16 @@ export default function AboutSection() {
             </Reveal>
             <Reveal>
                 <p className="text">
-                    Сейчас я в креативной студии{" "}
+                    Сейчас я в{" "}
                     <MorphText>
                         <a href="https://sirena.team" className="link" target="_blank">
-                            Сирена↗
+                            Сирене↗
                         </a>
                     </MorphText>
-                    , делаем проекты для{" "}
+                    , креативной инхаус-студии внутри{" "}
                     <MorphText>
                         <a href="https://sports.ru/" className="link" target="_blank">
-                            Спортс↗
+                            Спортса↗
                         </a>
                     </MorphText>
                     . Ранее 3 года в самарской сети{" "}
@@ -38,21 +38,14 @@ export default function AboutSection() {
                             Томат↗
                         </a>
                     </MorphText>{" "}
-                    занимался дизайном, арт-дирстом и развитием дизайн-команды. Еще я
-                    окончил вуз на ракетостроение, постоянно учусь, учу в{" "}
-                    <MorphText>
-                        <a href="https://www.gohelper.io/" className="link" target="_blank">
-                            Хелпере↗
-                        </a>
-                    </MorphText>
-                    .
+                    занимался дизайном, арт-дирстом и развитием дизайн-команды.
                 </p>
             </Reveal>
             <Reveal>
-                <p className="text">«Учу» — это я говорю без пафоса. Учеба — это необходимость, как мне кажется. Спустя 6 лет работы я пришёл к инженерии и коду, потому что дизайн для меня — это не просто картинка. Это система. Это логика. Это идея, которая оживает и становится частью чего-то большего.</p>
+                <p className="text">Стремлюсь стать дизайн-инженером. Изучил HTML+CSS+Vanilla JS. Изучаю Typescript и React+Redux.</p>
             </Reveal>
             <Reveal>
-                <p className="text">Я люблю дизайн. Всем сердцем. А ещё люблю литературу и музыку. Люблю переслушивать её и открывать новое. Это крутое чувство. Такое же чувство хочу передавать своей работой.</p>
+                <p className="text">Я люблю дизайн.</p>
             </Reveal>
         </section>
     )

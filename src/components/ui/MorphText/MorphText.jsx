@@ -29,7 +29,7 @@ export const createASCIIShift = (el, opts = {}) => {
         chars: '-─~+=*π""┐┌┘┴┬╗╔╝╚╬╠╣╩╦║░▒▓█▄▀▌▐■!?&#$@0123456789*',
         preserveSpaces: true,
         spread: 0.3,
-        widthBuffer: 2,
+        widthBuffer: 0.5,
         ...opts,
     };
 
