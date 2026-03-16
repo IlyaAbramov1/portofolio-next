@@ -25,6 +25,9 @@ export default function ListItem({
         onMouseEnter: () => setIsHover(true),
         onMouseLeave: () => setIsHover(false),
     };
+    const listItemContainerClassName = `${styles.listItemContainer} ${
+        cover ? styles.listItemContainerWithCover : ""
+    }`.trim();
 
     const content = (
         <>
@@ -76,7 +79,7 @@ export default function ListItem({
                 isExternal ? (
                     <a
                         href={href}
-                        className={styles.listItemContainer}
+                        className={listItemContainerClassName}
                         target="_blank"
                         rel="noreferrer"
                         {...hoverHandlers}
@@ -86,14 +89,14 @@ export default function ListItem({
                 ) : (
                     <Link
                         href={href}
-                        className={styles.listItemContainer}
+                        className={listItemContainerClassName}
                         {...hoverHandlers}
                     >
                         {content}
                     </Link>
                 )
             ) : (
-                <div className={styles.listItemContainer} {...hoverHandlers}>
+                <div className={listItemContainerClassName} {...hoverHandlers}>
                     {content}
                 </div>
             )}

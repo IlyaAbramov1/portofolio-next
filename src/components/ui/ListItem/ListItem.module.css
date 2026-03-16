@@ -8,8 +8,10 @@
     gap: 12px;
 
     text-decoration: none;
+}
 
-    margin-bottom: 4px;
+.listItemContainerWithCover {
+    margin-bottom: 12px;
 }
 
 .listItemContainer:hover {
