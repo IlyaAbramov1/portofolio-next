@@ -1,6 +1,14 @@
 import "./globals.css";
 import Script from "next/script";
 
+import { EB_Garamond } from "next/font/google"
+
+const garamond = EB_Garamond({
+    subsets: ["cyrillic", "latin"],
+    variable: "--garamond",
+    display: "swap"
+});
+ 
 export const metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
     title: {
@@ -30,7 +38,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ru">
-            <body className="appBody">
+            <body className={`${garamond.variable} appBody`}>
                 <main className="page">{ children }</main>
                 <Script id="yandex-metrika" strategy="afterInteractive">
                     {`

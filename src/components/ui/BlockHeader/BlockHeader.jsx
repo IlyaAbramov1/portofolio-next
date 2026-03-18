@@ -1,9 +1,10 @@
 "use client";
 
 import Reveal from "@/components/ui/Reveal/Reveal.jsx";
-import styles from "./BlockHeader.module.css"
+import styles from "./BlockHeader.module.css";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import MorphText from "../MorphText/MorphText";
 
 export default function BlockHeader({
@@ -36,7 +37,12 @@ export default function BlockHeader({
             <div className={styles.blockHeader}>
                 <div className={styles.blockHeaderInfo}>
                     <div className={styles.blockHeaderIcon}>
-                        <img src={iconPath} alt="" />
+                        <Image 
+                            src={iconPath} 
+                            width={240}
+                            height={240}
+                            alt="" 
+                        />
                     </div>
                     <h2 className="h2">{title}</h2>
                 </div>

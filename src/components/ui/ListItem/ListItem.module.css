@@ -136,7 +136,7 @@
 }
 
 .listItemSubText {
-    font-size: var(--main-text-size);
+    font-size: var(--little-text-size);
     line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: pretty;

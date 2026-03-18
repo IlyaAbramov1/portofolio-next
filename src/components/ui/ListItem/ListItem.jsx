@@ -64,11 +64,11 @@ export default function ListItem({
                         </div>
                     </div>
                 </div>
-                {linkText ? (
+                {/* {linkText ? (
                     <MorphText active={isHover}>
                         <span className={styles.linkButton}>{linkText}</span>
                     </MorphText>
-                ) : null}
+                ) : null} */}
             </div>
         </>
     );

@@ -1,5 +1,5 @@
 .followSection {
-    padding: 0;
+    padding: 24px 0 40px;
 }
 
 .asciiContainer {
@@ -18,7 +18,7 @@
     position: relative;
     z-index: 1;
 
-    color: var(--fourthly-text-color);
+    color: var(--accent-color);
     font-family: var(--font-family-mono);
     font-size: var(--ascii-font-size, 40px);
     line-height: 1;
@@ -38,7 +38,7 @@
 }
 
 .centerLink {
-    padding: 10px 16px;
+    padding: 12px 18px;
     background: var(--bg-color);
     color: var(--accent-color);
 
