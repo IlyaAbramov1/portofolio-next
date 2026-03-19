@@ -29,48 +29,61 @@ export default function ListItem({
         cover ? styles.listItemContainerWithCover : ""
     }`.trim();
 
-    const content = (
-        <>
-            {cover ? (
-                <div className={styles.listItemCoverWrapper}>
-                    <img className={styles.listItemCover} src={cover} alt="" />
+    const textClassName = cover
+        ? styles.listItemTextWithCover
+        : styles.listItemTextWithoutCover;
+
+    const textContent = (
+        <div className={textClassName}>
+            <MorphText active={isHover}>
+                <div className={styles.listItemTitleRow}>
+                    <div className={styles.listItemTitle}>{title}</div>
                 </div>
-            ) : null}
+            </MorphText>
+            <div className={styles.listItemDescription}>
+                {isNew ? (
+                    <MorphText active={isHover}>
+                        <div className="hashtagNew">Новое</div>
+                    </MorphText>
+                ) : null}
+                {cover ? (
+                    <MorphText active={isHover}>
+                        <div className={styles.listItemSubText}>{description}</div>
+                    </MorphText>
+                ) : (
+                    <div>
+                        <div className={styles.listItemSubText}>{description}</div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+
+    const content = cover ? (
+        <>
             <div className={styles.listItemContent}>
                 <div className={styles.listMedalAndText}>
-                        {hasMedal ? (
-                            <div className={styles.medalWrap} aria-hidden="true">
-                                {medalLabel ? (
-                                    <span className={styles.medalBadge}>{medalLabel}</span>
-                                ) : null}
-                                <span className={styles.coin} />
-                            </div>
-                        ) : null}
-                    <div className={styles.listItemText}>
-                        <MorphText active={isHover}>
-                            <div className={styles.listItemTitleRow}>
-                                <div className={styles.listItemTitle}>{title}</div>
-                            </div>
-                        </MorphText>
-                        <div className={styles.listItemDescription}>
-                            {isNew ? (
-                                <MorphText active={isHover}>
-                                    <div className="hashtagNew">Новое</div>
-                                </MorphText>
+                    {textContent}
+                    {hasMedal ? (
+                        <div className={styles.medalWrap} aria-hidden="true">
+                            {medalLabel ? (
+                                <span className={styles.medalBadge}>{medalLabel}</span>
                             ) : null}
-                            <MorphText active={isHover}>
-                                <div className={styles.listItemSubText}>{description}</div>
-                            </MorphText>
+                            <span className={styles.coin} />
                         </div>
-                    </div>
+                    ) : null}
                 </div>
-                {/* {linkText ? (
-                    <MorphText active={isHover}>
-                        <span className={styles.linkButton}>{linkText}</span>
-                    </MorphText>
-                ) : null} */}
+            </div>
+            <div className={styles.listItemCoverWrapper}>
+                <img className={styles.listItemCover} src={cover} alt="" />
             </div>
         </>
+    ) : (
+        <div className={styles.listItemContentArticle}>
+            <div className={styles.listMedalAndText}>
+                {textContent}
+            </div>
+        </div>
     );
 
     return (

@@ -7,6 +7,12 @@
     flex-direction: row;
 
     text-align: left;
+
+    color: var(--secondary-text-color)
+}
+
+.footerContainer p {
+    text-wrap: balance;
 }
 
 .footerContainer button {

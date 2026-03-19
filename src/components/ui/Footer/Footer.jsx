@@ -17,7 +17,7 @@ export default function AboutSection() {
         <footer className="innerContainer">
             <Reveal>
                     <div className={styles.footerContainer}>
-                        <p className="subText">Designed and developed by Ilya Abramov. Last update Jan 25</p>
+                        <p className="subText">Designed and developed by Ilya Abramov. Last update March 26</p>
                         <MorphText>
                             <button type="button" onClick={handleClick} className="link">Перейти наверх↑</button>
                         </MorphText>

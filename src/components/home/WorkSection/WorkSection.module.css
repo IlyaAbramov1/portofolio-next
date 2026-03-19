@@ -9,7 +9,7 @@
     font-size: var(--main-text-size);
     line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
-    text-wrap: pretty;
+    text-wrap: balance;
 
     color: var(--secondary-text-color);
 

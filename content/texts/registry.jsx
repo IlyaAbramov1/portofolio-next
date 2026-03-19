@@ -13,7 +13,7 @@ export const TEXTS = {
                 <div className={styles.bottom}>
                     <div className="h1">Макет мечты vs Реальность кода</div>
                     <div className="subText">Статья | 2025</div>
-                    <div className="text">О том, как донести свой дизайн до разработки.</div>
+                    <div className="text">О том, как дизайнеру говорить с разработкой на одном языке и доводить идеи до точной реализации.</div>
                 </div>
             ),
             secondaryLinks: [

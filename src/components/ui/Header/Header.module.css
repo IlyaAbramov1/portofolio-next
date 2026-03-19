@@ -2,8 +2,8 @@
     background-color: var(--bg-color);
 
     width: 100%;
-    padding: 32px 0;
-    margin-bottom: 26vh;
+    padding: 40px 0;
+    margin-bottom: 20vh;
     position: relative;
 
     display: flex;
@@ -48,6 +48,24 @@
 .bottom {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
 }
 
+@media (max-width: 620px) {
+    .page {
+        padding: 0 16px; 
+    }
+
+    .header {
+        background-color: var(--bg-color);
+
+        width: 100%;
+        padding: 32px 0;
+        margin-bottom: 26vh;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}

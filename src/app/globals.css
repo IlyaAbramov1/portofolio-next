@@ -4,31 +4,40 @@
         --s: 0%;
         /* Accent */
         --button-text-color: hsl(var(--h), var(--s), 97%);
-        --accent-color: hsl(220, 100%, 50%);
+        --accent-color: hsl(220, 100%, 60%);
         --secondary-accent-color: hsl(var(--h), 100%, 60%);
         --accent-secondary-bg: hsl(var(--h), 100%, 90%);
         /* Text */
-        --text-color: hsl(var(--h), var(--s), 24%);
+        --text-color: hsl(var(--h), var(--s), 20%);
         --secondary-text-color: hsl(var(--h), var(--s), 40%);
-        --thirdly-text-color: hsl(var(--h), var(--s), 80%);
+        --thirdly-text-color: hsl(var(--h), var(--s), 72%);
         --fourthly-text-color: hsl(var(--h), var(--s), 88%);
         /* Surfaces */
-        --stroke: hsl(var(--h) var(--s) 80%);
-        --secondary-stroke: hsl(var(--h) var(--s) 90%);
+        --stroke-color: hsl(var(--h) var(--s) 90%);
+        --secondary-stroke-color: hsl(var(--h) var(--s) 88%);
         --grid-size: 24px;
         --grid-line: hsl(var(--h) var(--s) 92%);
-        --bg-color: hsl(var(--h) var(--s) 100%);
-        --secondary-bg-color: hsl(var(--h) var(--s) 96%);
+        --bg-color: hsl(var(--h) var(--s) 95%);
+        --secondary-bg-color: hsl(var(--h) var(--s) 98%);
+        --tertiary-bg-color: hsl(var(--h) var(--s) 93%);
         --hover-bg: hsl(var(--h) var(--s) 97%);
+        /* Technical */
+        --green-color: hsl(120, 100%, 40%);
+        /* Legacy aliases */
+        --stroke: var(--stroke-color);
+        --deep-bg-color: var(--tertiary-bg-color);
 
-        /* Font style */
-        --title-text-size: 28px;
-        --title-text-line-height: 110%;
+    /* Font style */
+        /* H2 */
+        --h2-text-size: 30px;
+        --h2-text-line-height: 110%;
+        /* Main text */
         --main-text-size: 16px;
-        --main-text-line-height: 172%;
+        --main-text-line-height: 160%;
         --main-text-letter-spacing: -0.04em;
+        /* Little text */
         --little-text-size: 14px;
-        --little-text-line-height: 140%;
+        --little-text-line-height: 150%;
 
     --font-family-mono: 'JetBrains Mono', monospace;
     --font-family-title-regular: 'EBGaramond-Regular', serif;
@@ -38,18 +47,26 @@
 body.dark-theme {
     --h: 230;
     --s: 8%;
-    --accent-color: hsl(var(--h), 100%, 60%);
     --button-text-color: hsl(var(--h), var(--s), 90%);
+    --accent-color: hsl(220, 100%, 60%);
+    --secondary-accent-color: hsl(var(--h), 100%, 60%);
+    --accent-secondary-bg: hsl(var(--h) var(--s) 16%);
     --text-color: hsl(var(--h), var(--s), 90%);
     --secondary-text-color: hsl(var(--h), var(--s), 60%);
     --thirdly-text-color: hsl(var(--h), var(--s), 40%);
-    --fourthly-text-color: hsl(var(--h) var(--s) 30%);
-    --stroke: hsl(var(--h) var(--s) 20%);
-    --dot-color: hsl(var(--h) var(--s) 40%);
+    --fourthly-text-color: hsl(var(--h), var(--s), 30%);
+    --stroke-color: hsl(var(--h) var(--s) 20%);
+    --secondary-stroke-color: hsl(var(--h) var(--s) 24%);
     --bg-color: hsl(var(--h) var(--s) 8%);
     --secondary-bg-color: hsl(var(--h) var(--s) 12%);
-    --deep-bg-color: hsl(var(--h) var(--s) 8%);
-    --green-fill: hsl(120, 100%, 40%);
+    --tertiary-bg-color: hsl(var(--h) var(--s) 10%);
+    --grid-size: 24px;
+    --grid-line: hsl(var(--h) var(--s) 16%);
+    --hover-bg: hsl(var(--h) var(--s) 14%);
+    --green-color: hsl(120, 100%, 40%);
+    /* Legacy aliases */
+    --stroke: var(--stroke-color);
+    --deep-bg-color: var(--tertiary-bg-color);
 }
 
 @font-face {
@@ -136,9 +153,10 @@ body.dark-theme {
 
     font-style: normal;
     font-size: 36px;
-    line-height: var(--title-text-line-height);
+    line-height: var(--h2-text-line-height);
     letter-spacing: -0.02em;
     text-align: left;
+    text-wrap: pretty;
 
     color: var(--text-color);
 }
@@ -148,10 +166,11 @@ body.dark-theme {
     font-weight: 400;
 
     font-style: normal;
-    font-size: 36px;
-    line-height: var(--title-text-line-height);
+    font-size: var(--h2-text-size);
+    line-height: var(--h2-text-line-height);
     letter-spacing: -0.02em;
     text-align: left;
+    text-wrap: pretty;
 
     color: var(--text-color);
 }
@@ -167,6 +186,7 @@ body.dark-theme {
     line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: pretty;
+    text-align: left;
 
     color: var(--secondary-text-color);
 
@@ -174,7 +194,7 @@ body.dark-theme {
 }
 
 .subText { 
-    font-size: var(--main-text-size);
+    font-size: var(--little-text-size);
     line-height: 140%;
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: pretty;
@@ -205,7 +225,7 @@ body.dark-theme {
 
 .page {
     width: 100%;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
     min-height: 100vh;
 
@@ -235,24 +255,24 @@ body.dark-theme {
 
 .innerContainer {
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 32px 0;
     width: 100%;
     position: relative;
 
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 
     background-color: var(--bg-color);
 }
 
 .hashtagNew {
-    color: var(--green-fill) !important;
+    color: var(--green-color) !important;
     padding-left: 12px;
     position: relative;
 
     font-size: var(--main-text-size);
-    line-height: 175%;
+    line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: pretty;
 
@@ -267,12 +287,25 @@ body.dark-theme {
     top: 50%;
     height: 6px;
     width: 6px;
-    background-color: var(--green-fill);
+    background-color: var(--green-color);
     transform: translateY(-50%);
 }
 
 @media (max-width: 620px) {
     .innerContainer {
-        padding: 32px 24px;
+        padding: 32px 0;
+    }
+
+    .page {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+
+        padding: 0 20px;
     }
 }

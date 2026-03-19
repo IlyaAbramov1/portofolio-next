@@ -1,7 +1,29 @@
 .marquee {
+    position: relative;
     width: auto;
     overflow: hidden;
-    margin-inline: -39px;
+    margin-inline: -24px;
+}
+
+.marquee::before,
+.marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+
+.marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
 }
 
 .marqueeTrack {
@@ -52,7 +74,12 @@
 
 @media (max-width: 620px) {
     .marquee {
-         margin-inline: -23px;
+        margin-inline: -23px;
+    }
+
+    .marquee::before,
+    .marquee::after {
+        width: 72px;
     }
 
     .marqueeTrack {

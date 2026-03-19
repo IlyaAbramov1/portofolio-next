@@ -36,14 +36,14 @@ export default function BlockHeader({
         <Reveal>
             <div className={styles.blockHeader}>
                 <div className={styles.blockHeaderInfo}>
-                    <div className={styles.blockHeaderIcon}>
+                    {/* <div className={styles.blockHeaderIcon}>
                         <Image 
                             src={iconPath} 
                             width={240}
                             height={240}
                             alt="" 
                         />
-                    </div>
+                    </div> */}
                     <h2 className="h2">{title}</h2>
                 </div>
                 {subtitle ? (

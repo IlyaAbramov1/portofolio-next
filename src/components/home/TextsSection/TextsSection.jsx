@@ -11,19 +11,19 @@ const textsItems = [
 //   },
   {
     title: "Макет мечты vs Реальность кода",
-    description: "Статья | 2025",
+    description: "Как донести дизайн до разработки и продакшена",
     linkText: "Читать ↗",
     href: "/texts/dream-layout",
   },
   {
     title: "Копируй: Как работает дизайн",
-    description: "Перевод статьи | 2024",
+    description: "Почему копирование важно для обучения и развития",
     linkText: "Читать ↗",
     href: "/texts/copying",
   },
   {
     title: "Что такое дизайн?",
-    description: "Статья | 2024",
+    description: "Личный поиск смысла и определения дизайна",
     linkText: "Читать ↗",
     href: "/texts/what-design-is",
   },
