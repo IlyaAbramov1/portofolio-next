@@ -213,6 +213,8 @@
     }
 
     .listItemContentArticle:hover {
+        text-transform: none;
+        background-color: var(--secondary-bg-color);
         padding: 0;
     }
 }

@@ -45,28 +45,30 @@
 }
 
 body.dark-theme {
-    --h: 230;
-    --s: 8%;
-    --button-text-color: hsl(var(--h), var(--s), 90%);
-    --accent-color: hsl(220, 100%, 60%);
-    --secondary-accent-color: hsl(var(--h), 100%, 60%);
-    --accent-secondary-bg: hsl(var(--h) var(--s) 16%);
-    --text-color: hsl(var(--h), var(--s), 90%);
-    --secondary-text-color: hsl(var(--h), var(--s), 60%);
-    --thirdly-text-color: hsl(var(--h), var(--s), 40%);
-    --fourthly-text-color: hsl(var(--h), var(--s), 30%);
-    --stroke-color: hsl(var(--h) var(--s) 20%);
-    --secondary-stroke-color: hsl(var(--h) var(--s) 24%);
-    --bg-color: hsl(var(--h) var(--s) 8%);
-    --secondary-bg-color: hsl(var(--h) var(--s) 12%);
-    --tertiary-bg-color: hsl(var(--h) var(--s) 10%);
-    --grid-size: 24px;
-    --grid-line: hsl(var(--h) var(--s) 16%);
-    --hover-bg: hsl(var(--h) var(--s) 14%);
-    --green-color: hsl(120, 100%, 40%);
-    /* Legacy aliases */
-    --stroke: var(--stroke-color);
-    --deep-bg-color: var(--tertiary-bg-color);
+    /* Color */
+        --h: 230;
+        --s: 8%;
+        /* Accent */
+        --button-text-color: hsl(var(--h), var(--s), 90%);
+        --accent-color: hsl(220, 100%, 60%);
+        --secondary-accent-color: hsl(var(--h), 100%, 60%);
+        --accent-secondary-bg: hsl(var(--h) var(--s) 16%);
+        /* Text */
+        --text-color: hsl(var(--h), var(--s), 90%);
+        --secondary-text-color: hsl(var(--h), var(--s), 60%);
+        --thirdly-text-color: hsl(var(--h), var(--s), 40%);
+        --fourthly-text-color: hsl(var(--h), var(--s), 30%);
+        /* Surfaces */
+        --stroke-color: hsl(var(--h) var(--s) 20%);
+        --secondary-stroke-color: hsl(var(--h) var(--s) 24%);
+        --bg-color: hsl(var(--h) var(--s) 8%);
+        --secondary-bg-color: hsl(var(--h) var(--s) 12%);
+        --tertiary-bg-color: hsl(var(--h) var(--s) 10%);
+        --hover-bg: hsl(var(--h) var(--s) 14%);
+        --green-color: hsl(120, 100%, 40%);
+        /* Legacy aliases */
+        --stroke: var(--stroke-color);
+        --deep-bg-color: var(--tertiary-bg-color);
 }
 
 @font-face {
@@ -292,6 +294,16 @@ body.dark-theme {
 }
 
 @media (max-width: 620px) {
+    :root {
+        /* Main text */
+        --main-text-size: 15px;
+        --main-text-line-height: 160%;
+        --main-text-letter-spacing: -0.04em;
+        /* Little text */
+        --little-text-size: 13px;
+        --little-text-line-height: 150%;
+    }
+
     .innerContainer {
         padding: 32px 0;
     }
