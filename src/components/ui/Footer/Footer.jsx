@@ -5,7 +5,10 @@ import MorphText from "../MorphText/MorphText"
 
 import styles from "./Footer.module.css"
 
-export default function AboutSection() {
+export default function Footer({
+    note = "Designed and developed by Ilya Abramov. Last update March 26",
+    toTopLabel = "Перейти наверх↑",
+}) {
     const handleClick = () => {
         window.scrollTo({
             top: 0,
@@ -17,9 +20,9 @@ export default function AboutSection() {
         <footer className="innerContainer">
             <Reveal>
                     <div className={styles.footerContainer}>
-                        <p className="subText">Designed and developed by Ilya Abramov. Last update March 26</p>
+                        <p className="subText">{note}</p>
                         <MorphText>
-                            <button type="button" onClick={handleClick} className="link">Перейти наверх↑</button>
+                            <button type="button" onClick={handleClick} className="link">{toTopLabel}</button>
                         </MorphText>
                     </div>
             </Reveal>   

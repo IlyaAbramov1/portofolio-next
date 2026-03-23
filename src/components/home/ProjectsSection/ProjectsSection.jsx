@@ -3,18 +3,18 @@ import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import ListItem from "@/components/ui/ListItem/ListItem";
 import MorphText from "@/components/ui/MorphText/MorphText";
 import Reveal from "@/components/ui/Reveal/Reveal";
-import projectsData from "@/data/projects.json";
+import { localizeHref } from "@/i18n/utils";
 
 import styles from "./ProjectsSection.module.css";
 
-export default function ProjectsSection() {
-    const projectsItems = projectsData.slice(0, 7);
+export default function ProjectsSection({ locale, copy, projects }) {
+    const projectsItems = projects.slice(0, 7);
 
     return (
         <section id="projects" className="innerContainer">
             <BlockHeader 
                 iconName="projects"
-                title="Проекты"
+                title={copy.title}
             />
             {projectsItems.map((item) => (
                 <ListItem
@@ -31,8 +31,8 @@ export default function ProjectsSection() {
             ))}
             <Reveal>
                 <MorphText>
-                    <Link href="/projects" className={`link ${styles.allProjectsLink}`}>
-                        Все проекты ↗
+                    <Link href={localizeHref(locale, "/projects")} className={`link ${styles.allProjectsLink}`}>
+                        {copy.allLabel}
                     </Link>
                 </MorphText>
             </Reveal>

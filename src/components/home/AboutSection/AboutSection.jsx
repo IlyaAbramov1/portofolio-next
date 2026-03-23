@@ -2,50 +2,50 @@ import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import Reveal from "@/components/ui/Reveal/Reveal"
 import MorphText from "@/components/ui/MorphText/MorphText"
 
-export default function AboutSection() {
+export default function AboutSection({ copy }) {
     return (
         <section id="aboutMe" className="innerContainer">
             <BlockHeader 
                 iconName="about_me"
-                title="Обо мне"
+                title={copy.title}
             />
             <Reveal>
-                <p className="text">Я — Илья. Дизайнер веба, графики и два-дэ моушна.</p>
+                <p className="text">{copy.intro}</p>
             </Reveal>
             <Reveal>
                 <p className="text">
-                    Сейчас я в{" "}
+                    {copy.currentPrefix}
                     <MorphText>
                         <a href="https://sirena.team" className="link" target="_blank">
-                            Сирене↗
+                            {copy.currentStudio}
                         </a>
                     </MorphText>
-                    , креативной инхаус-студии внутри{" "}
+                    {copy.currentMiddle}
                     <MorphText>
                         <a href="https://sports.ru/" className="link" target="_blank">
-                            Спортса↗
+                            {copy.currentCompany}
                         </a>
                     </MorphText>
-                    . Ранее 3 года в самарской сети{" "}
+                    {copy.pastPrefix}
                     <MorphText>
                         <a href="https://dodopizza.ru/samara" className="link" target="_blank">
-                            Додо↗
+                            {copy.pastBrand}
                         </a>
-                    </MorphText>{" "}
-                    и агентстве{" "}
+                    </MorphText>
+                    {copy.pastMiddle}
                     <MorphText>
                         <a href="http://tomat.team/" className="link" target="_blank">
-                            Томат↗
+                            {copy.pastAgency}
                         </a>
-                    </MorphText>{" "}
-                    занимался дизайном, арт-дирстом и развитием дизайн-команды.
+                    </MorphText>
+                    {copy.pastSuffix}
                 </p>
             </Reveal>
             <Reveal>
-                <p className="text">Стремлюсь стать дизайн-инженером. Изучил HTML+CSS+Vanilla JS. Изучаю Typescript и React+Redux.</p>
+                <p className="text">{copy.goal}</p>
             </Reveal>
             <Reveal>
-                <p className="text">Я люблю дизайн.</p>
+                <p className="text">{copy.final}</p>
             </Reveal>
         </section>
     )

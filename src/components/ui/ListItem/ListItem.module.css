@@ -82,20 +82,9 @@
 
 .listItemContentArticle:hover {
     text-transform: uppercase;
-
-    padding: 12px 16px;
-
-    background-color: var(--tertiary-bg-color);
 }
 
 .listItemText {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-}
-
-.listItemTextWithCover,
-.listItemContentArticle {
     display: flex;
     flex-direction: column;
     gap: 0px;

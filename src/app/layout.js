@@ -10,16 +10,33 @@ const garamond = EB_Garamond({
 });
  
 export const metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://abramovdesign.com"),
     title: {
-        default: "Портфолио Ильи Абрамова",
+        default: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
         template: "%s — Портфолио Ильи Абрамова",
     },
-    description: "",
-  icons: {
-    icon: "/favicon.svg",
-  },
+    description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
+    icons: {
+        icon: "/favicon.svg",
+    },
+    alternates: {
+        canonical: "/",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
+    },
     openGraph: {
+        title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
+        description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
+        url: "https://abramovdesign.com",
+        siteName: "Портфолио Ильи Абрамова",
+        locale: "ru_RU",
+        type: "website",
         images: [
             {
                 url: "/og-banner.webp",
@@ -31,6 +48,8 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
+        title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
+        description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
         images: ["/og-banner.webp"],
     },
 };
@@ -38,7 +57,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ru">
-            <body className={`${garamond.variable} appBody`}>
+            <body suppressHydrationWarning className={`${garamond.variable} appBody`}>
+                <Script id="theme-init" strategy="beforeInteractive">
+                    {`
+                        (function() {
+                            try {
+                                var savedTheme = window.localStorage.getItem('theme');
+                                if (savedTheme === 'dark') {
+                                    document.body.classList.add('dark-theme');
+                                } else if (savedTheme === 'light') {
+                                    document.body.classList.remove('dark-theme');
+                                }
+                            } catch (error) {}
+                        })();
+                    `}
+                </Script>
                 <main className="page">{ children }</main>
                 <Script id="yandex-metrika" strategy="afterInteractive">
                     {`

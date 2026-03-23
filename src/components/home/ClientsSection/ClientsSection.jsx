@@ -15,14 +15,14 @@ const clients = [
     { id: "winline", label: "Winline", file: "Winline.svg" },
 ];
 
-export default function ClientsSection() {
+export default function ClientsSection({ copy }) {
     const marqueeItems = [...clients, ...clients];
 
     return (
         <section id="clients" className="innerContainer">
-            <BlockHeader iconName="clients" title="Клиенты" />
+            <BlockHeader iconName="clients" title={copy.title} />
             <Reveal>
-                <div className={styles.marquee} aria-label="Клиенты">
+                <div className={styles.marquee} aria-label={copy.ariaLabel}>
                     <div className={styles.marqueeTrack}>
                         {marqueeItems.map((client, index) => (
                             <div

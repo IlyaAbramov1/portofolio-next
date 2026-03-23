@@ -105,7 +105,7 @@ function createWaveMap(width, height) {
     );
 }
 
-function AsciiWave() {
+function AsciiWave({ ctaLabel }) {
     const containerRef = useRef(null);
     const [asciiText, setAsciiText] = useState("");
 
@@ -191,7 +191,7 @@ function AsciiWave() {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        Мой Телеграм-канал↗
+                        {ctaLabel}
                     </a>
                 </MorphText>
             </div>
@@ -199,11 +199,11 @@ function AsciiWave() {
     );
 }
 
-export default function FollowSection() {
+export default function FollowSection({ ctaLabel }) {
     return (
         <section id="aboutMe" className={`innerContainer ${styles.followSection}`}>
             <Reveal>
-                <AsciiWave />
+                <AsciiWave ctaLabel={ctaLabel} />
             </Reveal>
         </section>
     );

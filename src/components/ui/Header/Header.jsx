@@ -2,11 +2,12 @@
 
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle"
 import Reveal from "@/components/ui/Reveal/Reveal";
+import { localizeHref } from "@/i18n/utils";
 
 import styles from "./Header.module.css";
 import MorphText from "../MorphText/MorphText";
 
-function LinksRow({ label, links }) {
+function LinksRow({ label, links, locale }) {
     if (!label && (!links || links.length === 0)) return null;
 
     return (
@@ -19,7 +20,7 @@ function LinksRow({ label, links }) {
                             <MorphText key={`${l.href}-${l.label}`}>
                                 <a
                                     className="link"
-                                    href={l.href}
+                                    href={localizeHref(locale, l.href)}
                                     target={l.external ? "_blank" : undefined}
                                     rel={l.external ? "noreferrer" : undefined}
                                 >
@@ -35,6 +36,8 @@ function LinksRow({ label, links }) {
 }
 
 export default function Header({
+    locale = "ru",
+    logoAriaLabel = "На главную",
     primaryLabel,
     primaryLinks,
     secondaryLabel,
@@ -46,15 +49,15 @@ export default function Header({
             <Reveal>
                 <div className={styles.topRow}>
                     <div className={styles.logo}>
-                        <a href="/" aria-label="Логотип">
+                        <a href={localizeHref(locale, "/")} aria-label={logoAriaLabel}>
                             <img src="/main-logo.svg" alt="" />
                         </a>
                     </div>
-                    <ThemeToggle />
+                    <ThemeToggle locale={locale} />
                 </div>
             </Reveal>
 
-            <LinksRow label={primaryLabel} links={primaryLinks}/>
+            <LinksRow label={primaryLabel} links={primaryLinks} locale={locale}/>
 
             {bottomSlot ? 
                 <Reveal>
@@ -65,7 +68,7 @@ export default function Header({
                 : null
             }
             
-            <LinksRow label={secondaryLabel} links={secondaryLinks}/>
+            <LinksRow label={secondaryLabel} links={secondaryLinks} locale={locale}/>
         </header>
     )
 }

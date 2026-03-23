@@ -10,34 +10,27 @@ import ContactSection from "./ContactSection/ContactSection";
 import FollowSection from "./FollowSection/FollowSection";
 import Footer from "@/components/ui/Footer/Footer"
 
-export default function HomePage() {
+export default function HomePage({ locale, dictionary, projects }) {
+    const { home, footer } = dictionary;
+
     return (
         <div>
             <Header
-                primaryLabel="Разделы сайта:"
-                primaryLinks={[
-                    { href: "#aboutMe", label: "Обо мне↗"},
-                    { href: "#work", label: "Работа↗"}, 
-                    { href: "#clients", label: "Клиенты↗"}, 
-                    { href: "#projects", label: "Проекты↗"}, 
-                    { href: "#texts", label: "Тексты↗"}, 
-                ]}
-                secondaryLabel="А меня можно найти тут:"
-                secondaryLinks={[
-                    { href: "mailto:ilyaabramov29@gmail.com", label: "Email↗" },
-                    { href: "http://t.me/abramovdesiqn", label: "Telegram↗", external: true },
-                    { href: "https://dprofile.ru/ilyaabramov", label: "Dprofile↗", external: true },
-                    { href: "https://instagram.com/abramovdesiqn", label: "Insta↗", external: true },
-                ]}
+                locale={locale}
+                logoAriaLabel={home.header.logoAriaLabel}
+                primaryLabel={home.header.primaryLabel}
+                primaryLinks={home.header.primaryLinks}
+                secondaryLabel={home.header.secondaryLabel}
+                secondaryLinks={home.header.secondaryLinks}
             />
-            <AboutSection />
-            <FollowSection />
-            <WorkSection />
-            <ClientsSection />
-            <ProjectsSection />
-            <TextsSection />
-            <ContactSection />
-            <Footer />
+            <AboutSection copy={home.about} />
+            <FollowSection ctaLabel={home.follow.cta} />
+            <WorkSection copy={home.work} />
+            <ClientsSection copy={home.clients} />
+            <ProjectsSection locale={locale} copy={home.projects} projects={projects} />
+            <TextsSection locale={locale} copy={home.texts} />
+            <ContactSection copy={home.contact} />
+            <Footer note={footer.note} toTopLabel={footer.toTop} />
         </div>
     )
 }

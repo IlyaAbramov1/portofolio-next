@@ -1,10 +1,12 @@
+import { redirect } from "next/navigation";
+import { defaultLocale } from "@/i18n/config";
 import { TEXTS_META } from "../../../../content/texts/meta";
-import TextPageClient from "./TextPageClient";
 
 export function generateStaticParams() {
     return Object.keys(TEXTS_META).map((slug) => ({ slug }));
 }
 
-export default function TextPage() {
-    return <TextPageClient />;
+export default async function TextPage({ params }) {
+    const { slug } = await params;
+    redirect(`/${defaultLocale}/texts/${slug}`);
 }

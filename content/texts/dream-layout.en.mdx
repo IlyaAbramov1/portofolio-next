@@ -1,0 +1,179 @@
+import styles from "@/components/mdx/Prose.module.css";
+
+<div className={styles.articlePar}>
+    <h1 className="h1">Introduction</h1>
+    <p>This article grew out of my lecture at Design Kommunalka 2025. Thanks to the organizers for creating such a unique festival for Samara and for giving me the chance to speak there.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h2 className="h2">Responsibility for the Outcome</h2>
+    <p>Blaming development for an inaccurate implementation of a design is the last thing a designer should do. I am convinced that responsibility for how the final product looks lies entirely with us, as visual specialists.</p>
+    <p>To bring our ideas to life in production, we need to understand three things:</p>
+    <ul>
+        <li>How our ideas are designed</li>
+        <li>How to write a technical brief for development</li>
+        <li>How to communicate that brief to development</li>
+    </ul>
+    <p>Let's go through these points one by one.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h2">1. How Our Ideas Are Designed</h1>
+    <p>In the end, a designer's job comes down to making sure the implementer, usually a frontend engineer, clearly understands the idea. But how do you reach that ideal if the designer speaks in abstractions and shapes while the frontend engineer speaks programming languages?</p>
+    <p>A better question is this: which of those languages is easier to understand?</p>
+    <p>I think it is code.</p>
+    <p>The language of abstraction is subjective. It is shaped by trends and visual taste, two chaotic factors that cannot really be systematized.</p>
+    <p>Code, unlike abstraction, is objective. It has a clear system, a set of tools, and most importantly an explicit body of knowledge you need in order to use it.</p>
+    <p>To speak the same language as a frontend engineer, a designer can get very far by understanding <a href="https://doka.guide/html/" className="link" target="_blank" rel="noreferrer">HTML↗</a> and <a href="https://doka.guide/css/" className="link" target="_blank" rel="noreferrer">CSS↗</a>. HTML defines the structure of a web page. CSS styles elements, animates them, and adapts them to different devices.</p>
+    <p>By learning code, we also learn its limits. How blend modes affect browser performance, what constraints basic CSS animations have, how responsive behavior actually works. These and other browser limitations should already be in our heads when we make the first layouts.</p>
+    <p>You can learn programming in many places. For example, there is an excellent course by Zhenya Arutyunov, a designer who has been encouraging other designers to study code for a long time. I personally study programming at Purple School. It is a strong place with a systematic approach and a deep dive into each topic.</p>
+    <p>It is also worth following practicing specialists. On the Western market, a new role has been forming for several years now: the design engineer, someone who combines design and programming. I recommend following these people:</p>
+    <ul>
+        <li>
+            <a href="https://emilkowal.ski/" className="link" target="_blank" rel="noreferrer">Emil Kowalski↗</a>
+        </li>
+        <li>
+            <a href="http://jhey.dev/" className="link" target="_blank" rel="noreferrer">Jhey Tompkins↗</a>
+        </li>
+        <li>
+            <a href="https://jakub.kr/" className="link" target="_blank" rel="noreferrer">Jakub Krehel↗</a>
+        </li>
+        <li>
+            <a href="https://www.rauno.me/" className="link" target="_blank" rel="noreferrer">Rauno Freiberg↗</a>
+        </li>
+    </ul>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">2. How to Write a Technical Brief for Development</h1>
+    <p>A Figma file is just as much a technical brief as a branding brief. Once I understood that, my view of the work changed a lot. As designers, we are often demanding when clients describe a task. Now we have to take on the client's role ourselves.</p>
+    <p>Below are several tools we use when forming a technical brief, in other words a Figma file, for projects at Sirena:</p>
+    <ul>
+        <li>
+            <strong>Working with Pages</strong> so the brief is easy to navigate
+        </li>
+        <li>
+            <strong>A project design system</strong> so development can translate interface elements into code components and root CSS styles
+        </li>
+        <li>
+            <strong>Screens arranged in user-flow order</strong> so the project structure, flows, and implementation priorities are explicit
+        </li>
+        <li>
+            <strong>Semantic naming of screens</strong> where we rely on Figma Layout Autonaming
+        </li>
+        <li>
+            <strong>Text descriptions of element behavior on screen</strong>
+        </li>
+    </ul>
+
+    <p>I want to highlight the last point separately. It allows you to explain the interactive side of a layout in much more detail inside static Figma screens.</p>
+    <p>The first use case is describing dynamic content. For example:</p>
+
+    <p className="article-description">When a user signs in through Sports authentication, we assign a random nickname and place it inside the badge. It fits about 23 characters including spaces.</p>
+
+    <p>The second case is describing the behavior of an interactive element. Motion in web products deserves a separate article, so here I will only show one example: tooltip animation.</p>
+
+    <div className={styles.cssBlocks}>
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Tooltip base state */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-property</span>:{" "}
+                <span className={styles.cssValue}>opacity, transform</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-duration</span>:{" "}
+                <span className={styles.cssValue}>200ms</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transition-timing-function</span>:{" "}
+                <span className={styles.cssFunction}>cubic-bezier(0.19, 1, 0.22, 1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Enter animation */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-enter</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>0</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(0.8)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-enter-active</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>1</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssComment}>/* Exit animation */</span>
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-exit</span> {" {"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>1</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(1)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+
+        <div className={styles.cssBlock}>
+            <div className={styles.cssLine}>
+                <span className={styles.cssSelector}>.tooltip-exit-active</span> {"{"}
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>opacity</span>:{" "}
+                <span className={styles.cssValue}>0</span>;
+            </div>
+            <div className={styles.cssLine}>
+                <span className={styles.cssProp}>transform</span>:{" "}
+                <span className={styles.cssFunction}>scale(0.8)</span>;
+            </div>
+            <div className={styles.cssLine}>{"}"}</div>
+        </div>
+    </div>
+
+    <p>In these kinds of blocks we also rely on external tools: <a href="https://codepen.io/" className="link" target="_blank" rel="noreferrer">CodePen↗</a>, a library of already coded animated elements, and <a href="https://www.easing.dev/" className="link" target="_blank" rel="noreferrer">Easing Graphs↗</a>, a library of easings.</p>
+    <p>Inside our team, we introduced a checklist we use to double-check the main parts of a layout.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">3. How to Communicate the Brief to Development</h1>
+    <p>A handoff call for the layouts. On our side, we need to walk through the brief in detail and answer all follow-up questions. If necessary, we revise the layouts after the call. Sometimes feedback from teammates is exactly what makes the design better.</p>
+    <p>But communication does not end with the call. At every implementation stage, the designer should monitor the process as the owner of the idea.</p>
+</div>
+
+<div className={styles.articlePar}>
+    <h1 className="h1">Conclusion</h1>
+    <p>The perfect layout does not exist, because there will always be things you have to compromise on. But if we understand code and communicate a technical brief well, we can get closer to the result we actually want.</p>
+</div>

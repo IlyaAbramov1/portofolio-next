@@ -67,6 +67,29 @@
     background-color: var(--accent-color);
 }
 
+.ImageAndSubtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ImageAndSubtitle img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--stroke-color);
+    overflow: hidden;
+}
+
+.ImageAndSubtitleCaption {
+    color: var(--thirdly-text-color);
+}
+
+.ImageAndSubtitleCaption p {
+    color: var(--thirdly-text-color);
+}
+
 .cssBlocks {
     display: flex;
     flex-direction: column;
