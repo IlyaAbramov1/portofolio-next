@@ -17,8 +17,8 @@
         --secondary-stroke-color: hsl(var(--h) var(--s) 88%);
         --grid-size: 24px;
         --grid-line: hsl(var(--h) var(--s) 92%);
-        --bg-color: hsl(var(--h) var(--s) 95%);
-        --secondary-bg-color: hsl(var(--h) var(--s) 98%);
+        --bg-color: hsl(var(--h) var(--s) 97%);
+        --secondary-bg-color: hsl(var(--h) var(--s) 100%);
         --tertiary-bg-color: hsl(var(--h) var(--s) 93%);
         --hover-bg: hsl(var(--h) var(--s) 97%);
         /* Technical */

@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { defaultLocale, locales } from "@/i18n/config";
+import { withAssetVersion } from "@/lib/assets";
 import styles from "./ThemeToggle.module.css";
 
 function subscribe(onStoreChange) {
@@ -75,11 +76,11 @@ export default function ThemeToggle({ locale = defaultLocale }) {
                 aria-label="Переключить тему"
             >
                 <img
-                    src={
+                    src={withAssetVersion(
                         isDark
                             ? "/default-icons/dark-theme/moon.svg"
                             : "/default-icons/light-theme/sun.svg"
-                    }
+                    )}
                     alt=""
                 />
             </button>

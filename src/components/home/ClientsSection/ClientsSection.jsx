@@ -1,5 +1,6 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader";
 import Reveal from "@/components/ui/Reveal/Reveal";
+import { withAssetVersion } from "@/lib/assets";
 
 import styles from "./ClientsSection.module.css";
 
@@ -31,12 +32,12 @@ export default function ClientsSection({ copy }) {
                                 aria-hidden={index >= clients.length}
                             >
                                 <img
-                                    src={`/clients/light/${client.file}`}
+                                    src={withAssetVersion(`/clients/light/${client.file}`)}
                                     alt={index < clients.length ? client.label : ""}
                                     className={styles.logoLight}
                                 />
                                 <img
-                                    src={`/clients/dark/${client.file}`}
+                                    src={withAssetVersion(`/clients/dark/${client.file}`)}
                                     alt=""
                                     className={styles.logoDark}
                                 />

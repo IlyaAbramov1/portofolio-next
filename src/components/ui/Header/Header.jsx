@@ -3,6 +3,7 @@
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle"
 import Reveal from "@/components/ui/Reveal/Reveal";
 import { localizeHref } from "@/i18n/utils";
+import { withAssetVersion } from "@/lib/assets";
 
 import styles from "./Header.module.css";
 import MorphText from "../MorphText/MorphText";
@@ -50,7 +51,7 @@ export default function Header({
                 <div className={styles.topRow}>
                     <div className={styles.logo}>
                         <a href={localizeHref(locale, "/")} aria-label={logoAriaLabel}>
-                            <img src="/main-logo.svg" alt="" />
+                            <img src={withAssetVersion("/main-logo.svg")} alt="" />
                         </a>
                     </div>
                     <ThemeToggle locale={locale} />

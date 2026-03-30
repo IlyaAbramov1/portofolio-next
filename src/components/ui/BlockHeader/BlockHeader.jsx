@@ -6,6 +6,7 @@ import styles from "./BlockHeader.module.css";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import MorphText from "../MorphText/MorphText";
+import { withAssetVersion } from "@/lib/assets";
 
 export default function BlockHeader({
     iconName,
@@ -30,7 +31,9 @@ export default function BlockHeader({
         return () => observer.disconnect();
     }, [])
 
-    const iconPath = `/default-icons/${isDark ? "dark-theme" : "light-theme"}/${iconName}.svg`
+    const iconPath = withAssetVersion(
+        `/default-icons/${isDark ? "dark-theme" : "light-theme"}/${iconName}.svg`
+    );
 
     return (
         <Reveal>

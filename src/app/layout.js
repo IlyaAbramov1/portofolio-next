@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import { withAssetVersion } from "@/lib/assets";
 
 import { EB_Garamond } from "next/font/google"
 
@@ -17,7 +18,7 @@ export const metadata = {
     },
     description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
     icons: {
-        icon: "/favicon.svg",
+        icon: withAssetVersion("/favicon.svg"),
     },
     alternates: {
         canonical: "/",
@@ -39,7 +40,7 @@ export const metadata = {
         type: "website",
         images: [
             {
-                url: "/og-banner.webp",
+                url: withAssetVersion("/og-banner.webp"),
                 width: 1200,
                 height: 630,
                 alt: "Портфолио Ильи Абрамова",
@@ -50,7 +51,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
         description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
-        images: ["/og-banner.webp"],
+        images: [withAssetVersion("/og-banner.webp")],
     },
 };
 

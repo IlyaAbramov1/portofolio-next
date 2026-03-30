@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Reveal from "../Reveal/Reveal";
 import MorphText from "../MorphText/MorphText";
+import { withAssetVersion } from "@/lib/assets";
 
 import styles from "./ListItem.module.css";
 
@@ -75,7 +76,7 @@ export default function ListItem({
                 </div>
             </div>
             <div className={styles.listItemCoverWrapper}>
-                <img className={styles.listItemCover} src={cover} alt="" />
+                <img className={styles.listItemCover} src={withAssetVersion(cover)} alt="" />
             </div>
         </>
     ) : (
