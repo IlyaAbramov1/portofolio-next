@@ -1,12 +1,13 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import Reveal from "@/components/ui/Reveal/Reveal"
 import MorphText from "@/components/ui/MorphText/MorphText"
+import { SECTION_IDS, SITE_LINKS } from "@/lib/site";
 
 import styles from "./ContactSection.module.css"
 
-export default function AboutSection({ copy }) {
+export default function ContactSection({ copy }) {
     return (
-        <section id="aboutMe" className="innerContainer">
+        <section id={SECTION_IDS.contact} className="innerContainer">
             <BlockHeader 
                 iconName="contacts"
                 title={copy.title}
@@ -18,7 +19,7 @@ export default function AboutSection({ copy }) {
                 <div className={styles.rowSection}>
                     <p className="subText">{copy.emailLabel}</p>
                     <MorphText>
-                        <a className="link" href="mailto:ilyaabramov29@gmail.com" target="_blank">ilyaabramov29@gmail.com↗</a>
+                        <a className="link" href={SITE_LINKS.email}>ilyaabramov29@gmail.com↗</a>
                     </MorphText>
                 </div>
             </Reveal>
@@ -26,7 +27,7 @@ export default function AboutSection({ copy }) {
                 <div className={styles.rowSection}>
                     <p className="subText">{copy.telegramLabel}</p>
                     <MorphText>
-                        <a className="link" href="https://t.me/abramovdesiqn" target="_blank">{copy.telegramHandle}</a>
+                        <a className="link" href={SITE_LINKS.telegram} target="_blank" rel="noreferrer">{copy.telegramHandle}</a>
                     </MorphText>
                 </div>
             </Reveal>

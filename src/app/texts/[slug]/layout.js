@@ -1,4 +1,5 @@
 import { TEXTS_META } from "../../../../content/texts/meta";
+import { createTextMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({ params }) {
     const resolvedParams = await params;
@@ -9,18 +10,7 @@ export async function generateMetadata({ params }) {
 
     if (!entry) return {};
 
-    return {
-        title: entry.title,
-        description: entry.description,
-        openGraph: {
-            title: entry.title,
-            description: entry.description,
-        },
-        twitter: {
-            title: entry.title,
-            description: entry.description,
-        },
-    };
+    return createTextMetadata(entry);
 }
 
 export default function TextLayout({ children }) {

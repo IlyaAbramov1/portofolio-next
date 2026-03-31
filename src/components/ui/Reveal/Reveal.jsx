@@ -7,6 +7,7 @@ export default function Reveal({ children, className = "", once = true }) {
   const { ref, isInView } = useInView({
     threshold: 0.2,
     rootMargin: "0px 0px 0px 0px",
+    once,
   });
 
   return (

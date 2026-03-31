@@ -9,11 +9,11 @@ export default function Footer({
     note = "Designed and developed by Ilya Abramov. Last update March 26",
     toTopLabel = "Перейти наверх↑",
 }) {
-    const handleClick = () => {
+    function handleClick() {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
-        })
+        });
     }
 
     return (
@@ -25,7 +25,7 @@ export default function Footer({
                             <button type="button" onClick={handleClick} className="link">{toTopLabel}</button>
                         </MorphText>
                     </div>
-            </Reveal>   
-        </footer>    
+            </Reveal>
+        </footer>
     )
 }

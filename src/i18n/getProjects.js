@@ -1,4 +1,5 @@
 import { defaultLocale } from "./config";
+import { loadLocaleModule } from "./loadLocaleModule";
 
 const projectsByLocale = {
     ru: () => import("./content/projects/ru").then((module) => module.default),
@@ -6,6 +7,5 @@ const projectsByLocale = {
 };
 
 export async function getProjects(locale) {
-    const load = projectsByLocale[locale] || projectsByLocale[defaultLocale];
-    return load();
+    return loadLocaleModule(projectsByLocale, locale || defaultLocale);
 }

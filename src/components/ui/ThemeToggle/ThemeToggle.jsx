@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { defaultLocale, locales } from "@/i18n/config";
@@ -75,13 +76,15 @@ export default function ThemeToggle({ locale = defaultLocale }) {
                 aria-pressed={isDark}
                 aria-label="Переключить тему"
             >
-                <img
+                <Image
                     src={withAssetVersion(
                         isDark
                             ? "/default-icons/dark-theme/moon.svg"
                             : "/default-icons/light-theme/sun.svg"
                     )}
                     alt=""
+                    width={16}
+                    height={16}
                 />
             </button>
         </div>

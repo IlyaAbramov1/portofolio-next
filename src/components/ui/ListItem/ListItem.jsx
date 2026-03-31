@@ -76,6 +76,7 @@ export default function ListItem({
                 </div>
             </div>
             <div className={styles.listItemCoverWrapper}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className={styles.listItemCover} src={withAssetVersion(cover)} alt="" />
             </div>
         </>

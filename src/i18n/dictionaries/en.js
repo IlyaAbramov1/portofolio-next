@@ -1,3 +1,5 @@
+import { SITE_LINKS } from "@/lib/site";
+
 const dictionary = {
     metadata: {
         title: "Ilya Abramov Portfolio",
@@ -17,10 +19,10 @@ const dictionary = {
             ],
             secondaryLabel: "Find me here:",
             secondaryLinks: [
-                { href: "mailto:ilyaabramov29@gmail.com", label: "Email↗" },
-                { href: "http://t.me/abramovdesiqn", label: "Telegram↗", external: true },
-                { href: "https://dprofile.ru/ilyaabramov", label: "Dprofile↗", external: true },
-                { href: "https://instagram.com/abramovdesiqn", label: "Instagram↗", external: true },
+                { href: SITE_LINKS.email, label: "Email↗" },
+                { href: SITE_LINKS.telegram, label: "Telegram↗", external: true },
+                { href: SITE_LINKS.dprofile, label: "Dprofile↗", external: true },
+                { href: SITE_LINKS.instagram, label: "Instagram↗", external: true },
             ],
         },
         about: {

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import MorphText from "@/components/ui/MorphText/MorphText";
+import { SECTION_IDS, SITE_LINKS } from "@/lib/site";
 
 import styles from "./FollowSection.module.css";
 
@@ -186,7 +187,7 @@ function AsciiWave({ ctaLabel }) {
             <div className={styles.centerContent}>
                 <MorphText>
                     <a
-                        href="https://t.me/tehnichka_design/"
+                        href={SITE_LINKS.telegramChannel}
                         className={`link ${styles.centerLink}`}
                         target="_blank"
                         rel="noreferrer"
@@ -201,7 +202,7 @@ function AsciiWave({ ctaLabel }) {
 
 export default function FollowSection({ ctaLabel }) {
     return (
-        <section id="aboutMe" className={`innerContainer ${styles.followSection}`}>
+        <section id={SECTION_IDS.follow} className={`innerContainer ${styles.followSection}`}>
             <Reveal>
                 <AsciiWave ctaLabel={ctaLabel} />
             </Reveal>

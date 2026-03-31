@@ -1,10 +1,11 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import Reveal from "@/components/ui/Reveal/Reveal"
 import MorphText from "@/components/ui/MorphText/MorphText"
+import { SECTION_IDS, SITE_LINKS } from "@/lib/site";
 
 export default function AboutSection({ copy }) {
     return (
-        <section id="aboutMe" className="innerContainer">
+        <section id={SECTION_IDS.about} className="innerContainer">
             <BlockHeader 
                 iconName="about_me"
                 title={copy.title}
@@ -16,25 +17,25 @@ export default function AboutSection({ copy }) {
                 <p className="text">
                     {copy.currentPrefix}
                     <MorphText>
-                        <a href="https://sirena.team" className="link" target="_blank">
+                        <a href={SITE_LINKS.sirena} className="link" target="_blank" rel="noreferrer">
                             {copy.currentStudio}
                         </a>
                     </MorphText>
                     {copy.currentMiddle}
                     <MorphText>
-                        <a href="https://sports.ru/" className="link" target="_blank">
+                        <a href={SITE_LINKS.sports} className="link" target="_blank" rel="noreferrer">
                             {copy.currentCompany}
                         </a>
                     </MorphText>
                     {copy.pastPrefix}
                     <MorphText>
-                        <a href="https://dodopizza.ru/samara" className="link" target="_blank">
+                        <a href={SITE_LINKS.dodo} className="link" target="_blank" rel="noreferrer">
                             {copy.pastBrand}
                         </a>
                     </MorphText>
                     {copy.pastMiddle}
                     <MorphText>
-                        <a href="http://tomat.team/" className="link" target="_blank">
+                        <a href={SITE_LINKS.tomat} className="link" target="_blank" rel="noreferrer">
                             {copy.pastAgency}
                         </a>
                     </MorphText>

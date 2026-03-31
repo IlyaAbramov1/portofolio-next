@@ -9,15 +9,15 @@
         --accent-secondary-bg: hsl(var(--h), 100%, 90%);
         /* Text */
         --text-color: hsl(var(--h), var(--s), 20%);
-        --secondary-text-color: hsl(var(--h), var(--s), 40%);
+        --secondary-text-color: hsl(var(--h), var(--s), 34%);
         --thirdly-text-color: hsl(var(--h), var(--s), 72%);
         --fourthly-text-color: hsl(var(--h), var(--s), 88%);
         /* Surfaces */
-        --stroke-color: hsl(var(--h) var(--s) 90%);
+        --stroke-color: hsl(var(--h) var(--s) 86%);
         --secondary-stroke-color: hsl(var(--h) var(--s) 88%);
         --grid-size: 24px;
         --grid-line: hsl(var(--h) var(--s) 92%);
-        --bg-color: hsl(var(--h) var(--s) 97%);
+        --bg-color: hsl(var(--h) var(--s) 95%);
         --secondary-bg-color: hsl(var(--h) var(--s) 100%);
         --tertiary-bg-color: hsl(var(--h) var(--s) 93%);
         --hover-bg: hsl(var(--h) var(--s) 97%);
@@ -44,6 +44,13 @@
     --font-family-quote: 'EBGaramond-Regular', serif;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body.dark-theme {
     /* Color */
         --h: 230;
@@ -54,12 +61,12 @@ body.dark-theme {
         --secondary-accent-color: hsl(var(--h), 100%, 60%);
         --accent-secondary-bg: hsl(var(--h) var(--s) 16%);
         /* Text */
-        --text-color: hsl(var(--h), var(--s), 90%);
-        --secondary-text-color: hsl(var(--h), var(--s), 60%);
+        --text-color: hsl(var(--h), var(--s), 94%);
+        --secondary-text-color: hsl(var(--h), var(--s), 72%);
         --thirdly-text-color: hsl(var(--h), var(--s), 40%);
         --fourthly-text-color: hsl(var(--h), var(--s), 30%);
         /* Surfaces */
-        --stroke-color: hsl(var(--h) var(--s) 20%);
+        --stroke-color: hsl(var(--h) var(--s) 22%);
         --secondary-stroke-color: hsl(var(--h) var(--s) 24%);
         --bg-color: hsl(var(--h) var(--s) 8%);
         --secondary-bg-color: hsl(var(--h) var(--s) 12%);
@@ -211,6 +218,7 @@ body.dark-theme {
     background-color: var(--bg-color);
 
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
 
     overflow-x: hidden;
@@ -236,6 +244,7 @@ body.dark-theme {
     gap: 0px;
 
     padding: 0 12px;
+    overflow-x: clip;
 }
 
 .link {
@@ -259,6 +268,7 @@ body.dark-theme {
     margin: 0 auto;
     padding: 32px 0;
     width: 100%;
+    max-width: 100%;
     position: relative;
 
     display: flex;
@@ -293,11 +303,13 @@ body.dark-theme {
     transform: translateY(-50%);
 }
 
+/* Mobile */
+
 @media (max-width: 620px) {
     :root {
         /* Main text */
         --main-text-size: 15px;
-        --main-text-line-height: 160%;
+        --main-text-line-height: 150%;
         --main-text-letter-spacing: -0.04em;
         /* Little text */
         --little-text-size: 13px;

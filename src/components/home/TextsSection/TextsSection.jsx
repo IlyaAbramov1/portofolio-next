@@ -1,10 +1,11 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import ListItem from "@/components/ui/ListItem/ListItem";
 import { localizeHref } from "@/i18n/utils";
+import { SECTION_IDS } from "@/lib/site";
 
-export default function ProjectsSection({ locale, copy }) {
+export default function TextsSection({ locale, copy }) {
     return (
-        <section id="texts" className="innerContainer">
+        <section id={SECTION_IDS.texts} className="innerContainer">
             <BlockHeader
                 iconName="texts"
                 title={copy.title}

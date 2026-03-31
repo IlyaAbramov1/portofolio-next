@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle"
 import Reveal from "@/components/ui/Reveal/Reveal";
 import { localizeHref } from "@/i18n/utils";
-import { withAssetVersion } from "@/lib/assets";
+import { STATIC_FILES } from "@/lib/site";
 
 import styles from "./Header.module.css";
 import MorphText from "../MorphText/MorphText";
@@ -50,8 +51,19 @@ export default function Header({
             <Reveal>
                 <div className={styles.topRow}>
                     <div className={styles.logo}>
-                        <a href={localizeHref(locale, "/")} aria-label={logoAriaLabel}>
-                            <img src={withAssetVersion("/main-logo.svg")} alt="" />
+                        <a
+                            href={localizeHref(locale, "/")}
+                            aria-label={logoAriaLabel}
+                            className={styles.logoLink}
+                        >
+                            <Image
+                                src={STATIC_FILES.logo}
+                                alt=""
+                                width={100}
+                                height={84}
+                                priority
+                                className={styles.logoImage}
+                            />
                         </a>
                     </div>
                     <ThemeToggle locale={locale} />

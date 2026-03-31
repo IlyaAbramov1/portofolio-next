@@ -1,13 +1,9 @@
 import HomePage from "@/components/home/HomePage";
-import { getDictionary } from "@/i18n/getDictionary";
-import { getProjects } from "@/i18n/getProjects";
+import { getHomePageData } from "@/lib/page-data";
 
 export default async function LocaleHomePage({ params }) {
     const { locale } = await params;
-    const [dictionary, projects] = await Promise.all([
-        getDictionary(locale),
-        getProjects(locale),
-    ]);
+    const { dictionary, projects } = await getHomePageData(locale);
 
     return <HomePage locale={locale} dictionary={dictionary} projects={projects} />;
 }

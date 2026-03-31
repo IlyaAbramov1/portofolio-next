@@ -1,28 +1,42 @@
 import "./globals.css";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { withAssetVersion } from "@/lib/assets";
+import {
+    STATIC_FILES,
+    THEME_INIT_SCRIPT,
+    YANDEX_METRIKA_ID,
+    YANDEX_METRIKA_SCRIPT,
+} from "@/lib/site";
+import { createSiteMetadata } from "@/lib/metadata";
 
-import { EB_Garamond } from "next/font/google"
-
-const garamond = EB_Garamond({
-    subsets: ["cyrillic", "latin"],
+const garamond = localFont({
+    src: [
+        {
+            path: "../../public/fonts/EBGaramond-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/EBGaramond-Italic.woff2",
+            weight: "400",
+            style: "italic",
+        },
+    ],
     variable: "--garamond",
-    display: "swap"
+    display: "swap",
 });
- 
+
 export const metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://abramovdesign.com"),
-    title: {
-        default: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
-        template: "%s — Портфолио Ильи Абрамова",
-    },
-    description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
+    ...createSiteMetadata({
+        title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
+        description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
+        siteName: "Портфолио Ильи Абрамова",
+        titleTemplate: "%s — Портфолио Ильи Абрамова",
+    }),
     icons: {
-        icon: withAssetVersion("/favicon.svg"),
-    },
-    alternates: {
-        canonical: "/",
-    },
+        icon: withAssetVersion(STATIC_FILES.favicon),
+    },    
     robots: {
         index: true,
         follow: true,
@@ -31,28 +45,6 @@ export const metadata = {
             follow: true,
         },
     },
-    openGraph: {
-        title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
-        description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
-        url: "https://abramovdesign.com",
-        siteName: "Портфолио Ильи Абрамова",
-        locale: "ru_RU",
-        type: "website",
-        images: [
-            {
-                url: withAssetVersion("/og-banner.webp"),
-                width: 1200,
-                height: 630,
-                alt: "Портфолио Ильи Абрамова",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Илья Абрамов — Дизайнер веба, графики и 2D-моушна",
-        description: "Я — Илья. Дизайнер веба, графики и два-дэ моушна.",
-        images: [withAssetVersion("/og-banner.webp")],
-    },
 };
 
 export default function RootLayout({ children }) {
@@ -60,47 +52,17 @@ export default function RootLayout({ children }) {
         <html lang="ru">
             <body suppressHydrationWarning className={`${garamond.variable} appBody`}>
                 <Script id="theme-init" strategy="beforeInteractive">
-                    {`
-                        (function() {
-                            try {
-                                var savedTheme = window.localStorage.getItem('theme');
-                                if (savedTheme === 'dark') {
-                                    document.body.classList.add('dark-theme');
-                                } else if (savedTheme === 'light') {
-                                    document.body.classList.remove('dark-theme');
-                                }
-                            } catch (error) {}
-                        })();
-                    `}
+                    {THEME_INIT_SCRIPT}
                 </Script>
                 <main className="page">{ children }</main>
                 <Script id="yandex-metrika" strategy="afterInteractive">
-                    {`
-                        (function(m,e,t,r,i,k,a){
-                            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                            m[i].l=1*new Date();
-                            for (var j = 0; j < document.scripts.length; j++) {
-                                if (document.scripts[j].src === r) { return; }
-                            }
-                            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
-                        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104110652', 'ym');
-
-                        ym(104110652, 'init', {
-                            ssr: true,
-                            webvisor: true,
-                            clickmap: true,
-                            ecommerce: "dataLayer",
-                            referrer: document.referrer,
-                            url: location.href,
-                            accurateTrackBounce: true,
-                            trackLinks: true
-                        });
-                    `}
+                    {YANDEX_METRIKA_SCRIPT}
                 </Script>
                 <noscript>
                     <div>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src="https://mc.yandex.ru/watch/104110652"
+                            src={`https://mc.yandex.ru/watch/${YANDEX_METRIKA_ID}`}
                             style={{ position: "absolute", left: "-9999px" }}
                             alt=""
                         />

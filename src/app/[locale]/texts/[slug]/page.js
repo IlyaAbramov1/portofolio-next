@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Prose from "@/components/mdx/Prose";
+import { createTextMetadata } from "@/lib/metadata";
 import { getTextEntry, getTextStaticParams } from "../../../../../content/texts/registry";
 
 export function generateStaticParams() {
@@ -14,18 +15,7 @@ export async function generateMetadata({ params }) {
         return {};
     }
 
-    return {
-        title: entry.meta.title,
-        description: entry.meta.description,
-        openGraph: {
-            title: entry.meta.title,
-            description: entry.meta.description,
-        },
-        twitter: {
-            title: entry.meta.title,
-            description: entry.meta.description,
-        },
-    };
+    return createTextMetadata(entry.meta);
 }
 
 export default async function TextPage({ params }) {

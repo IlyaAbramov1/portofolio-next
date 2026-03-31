@@ -1,4 +1,5 @@
 import { defaultLocale } from "./config";
+import { loadLocaleModule } from "./loadLocaleModule";
 
 const dictionaries = {
     ru: () => import("./dictionaries/ru").then((module) => module.default),
@@ -6,6 +7,5 @@ const dictionaries = {
 };
 
 export async function getDictionary(locale) {
-    const load = dictionaries[locale] || dictionaries[defaultLocale];
-    return load();
+    return loadLocaleModule(dictionaries, locale || defaultLocale);
 }

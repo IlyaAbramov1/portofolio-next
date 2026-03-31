@@ -1,17 +1,16 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
-import MorphText from "@/components/ui/MorphText/MorphText";
-
 import styles from "./WorkSection.module.css"
 import Reveal from "@/components/ui/Reveal/Reveal";
+import { SECTION_IDS, STATIC_FILES } from "@/lib/site";
 
 export default function WorkSection({ copy }) {
     return (
-        <section id="work" className="innerContainer">
+        <section id={SECTION_IDS.work} className="innerContainer">
             <BlockHeader 
                 iconName="work"
                 title={copy.title}
                 subtitle={copy.cvLabel}
-                subtitleLink="/CV_Ilya_Abramov.pdf"
+                subtitleLink={STATIC_FILES.cv}
                 subtitleDownloadFile="CV_Ilya_Abramov.pdf"
             />
             {copy.items.map((item) => (

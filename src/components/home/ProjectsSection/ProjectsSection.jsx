@@ -1,9 +1,9 @@
-import Link from "next/link";
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader"
 import ListItem from "@/components/ui/ListItem/ListItem";
 import MorphText from "@/components/ui/MorphText/MorphText";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import { localizeHref } from "@/i18n/utils";
+import { SECTION_IDS } from "@/lib/site";
 
 import styles from "./ProjectsSection.module.css";
 
@@ -11,7 +11,7 @@ export default function ProjectsSection({ locale, copy, projects }) {
     const projectsItems = projects.slice(0, 7);
 
     return (
-        <section id="projects" className="innerContainer">
+        <section id={SECTION_IDS.projects} className="innerContainer">
             <BlockHeader 
                 iconName="projects"
                 title={copy.title}
@@ -31,9 +31,9 @@ export default function ProjectsSection({ locale, copy, projects }) {
             ))}
             <Reveal>
                 <MorphText>
-                    <Link href={localizeHref(locale, "/projects")} className={`link ${styles.allProjectsLink}`}>
+                    <a href={localizeHref(locale, "/projects")} className={`link ${styles.allProjectsLink}`}>
                         {copy.allLabel}
-                    </Link>
+                    </a>
                 </MorphText>
             </Reveal>
         </section>

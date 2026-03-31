@@ -1,6 +1,6 @@
 "use client";
 
-import { cloneElement, isValidElement, useEffect, useRef } from "react";
+import { cloneElement, isValidElement, useEffect, useId, useRef } from "react";
 
 // Constants for wave animation behavior
 const WAVE_THRESH = 3;
@@ -264,13 +264,20 @@ const getTextContent = (node) => {
     return "";
 };
 
+const MORPH_TEXT_ATTRIBUTE = "data-morph-text-id";
+
 export default function MorphText({ children, options, active = false }) {
-    const elRef = useRef(null);
+    const childRef = useRef(null);
     const instanceRef = useRef(null);
+    const morphTextId = useId();
+    const isElementChild = isValidElement(children);
     const textValue = getTextContent(children);
 
     useEffect(() => {
-        const el = elRef.current;
+        const el = isElementChild
+            ? document.querySelector(`[${MORPH_TEXT_ATTRIBUTE}="${morphTextId}"]`)
+            : childRef.current;
+
         if (!el) return;
 
         instanceRef.current = createASCIIShift(el, options);
@@ -281,7 +288,7 @@ export default function MorphText({ children, options, active = false }) {
                 instanceRef.current = null;
             }
         };
-    }, [options]);
+    }, [isElementChild, morphTextId, options]);
 
     useEffect(() => {
         if (!instanceRef.current) return;
@@ -297,9 +304,9 @@ export default function MorphText({ children, options, active = false }) {
         }
     }, [active]);
 
-    if (isValidElement(children)) {
-        return cloneElement(children, { ref: elRef });
+    if (isElementChild) {
+        return cloneElement(children, { [MORPH_TEXT_ATTRIBUTE]: morphTextId });
     }
 
-    return <span ref={elRef}>{children}</span>;
+    return <span ref={childRef}>{children}</span>;
 }

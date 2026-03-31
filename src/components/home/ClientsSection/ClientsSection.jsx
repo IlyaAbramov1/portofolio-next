@@ -1,6 +1,7 @@
 import BlockHeader from "@/components/ui/BlockHeader/BlockHeader";
 import Reveal from "@/components/ui/Reveal/Reveal";
 import { withAssetVersion } from "@/lib/assets";
+import { SECTION_IDS } from "@/lib/site";
 
 import styles from "./ClientsSection.module.css";
 
@@ -20,7 +21,7 @@ export default function ClientsSection({ copy }) {
     const marqueeItems = [...clients, ...clients];
 
     return (
-        <section id="clients" className="innerContainer">
+        <section id={SECTION_IDS.clients} className="innerContainer">
             <BlockHeader iconName="clients" title={copy.title} />
             <Reveal>
                 <div className={styles.marquee} aria-label={copy.ariaLabel}>
@@ -31,11 +32,13 @@ export default function ClientsSection({ copy }) {
                                 className={styles.clientLogo}
                                 aria-hidden={index >= clients.length}
                             >
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={withAssetVersion(`/clients/light/${client.file}`)}
                                     alt={index < clients.length ? client.label : ""}
                                     className={styles.logoLight}
                                 />
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={withAssetVersion(`/clients/dark/${client.file}`)}
                                     alt=""

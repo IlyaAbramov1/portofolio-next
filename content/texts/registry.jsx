@@ -2,8 +2,8 @@ import { TEXTS_META } from "./meta";
 import { locales } from "@/i18n/config";
 import { localizeHref } from "@/i18n/utils";
 import { getDictionary } from "@/i18n/getDictionary";
-
-import styles from "@/components/ui/Header/Header.module.css"
+import PageHeaderIntro from "@/components/ui/PageHeaderIntro/PageHeaderIntro";
+import { getFooterProps } from "@/lib/page-data";
 
 const TEXTS = {
     "dream-layout": {
@@ -119,18 +119,15 @@ export async function getTextEntry(locale, slug) {
         header: {
             locale,
             bottomSlot: (
-                <div className={styles.bottom}>
-                    <div className="h1">{localizedEntry.title}</div>
-                    <div className="subText">{`${localizedEntry.kind} | ${localizedEntry.year}`}</div>
-                    <div className="text">{localizedEntry.description}</div>
-                </div>
+                <PageHeaderIntro
+                    title={localizedEntry.title}
+                    subtitle={`${localizedEntry.kind} | ${localizedEntry.year}`}
+                    description={localizedEntry.description}
+                />
             ),
             secondaryLinks,
         },
-        footer: {
-            note: dictionary.footer.note,
-            toTopLabel: dictionary.footer.toTop,
-        },
+        footer: getFooterProps(dictionary),
         href: localizeHref(locale, `/texts/${slug}`),
     };
 }
