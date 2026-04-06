@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 import Header from "@/components/ui/Header/Header"
 import AboutSection from "./AboutSection/AboutSection";
 import WorkSection from "./WorkSection/WorkSection";
+import DesignLibrarySection from "./DesignLibrarySection/DesignLibrarySection";
 import ClientsSection from "./ClientsSection/ClientsSection";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 import TextsSection from "./TextsSection/TextsSection";
@@ -26,6 +27,7 @@ export default function HomePage({ locale, dictionary, projects }) {
             <AboutSection copy={home.about} />
             <FollowSection ctaLabel={home.follow.cta} />
             <WorkSection copy={home.work} />
+            <DesignLibrarySection copy={home.designLibrary} />
             <ClientsSection copy={home.clients} />
             <ProjectsSection locale={locale} copy={home.projects} projects={projects} />
             <TextsSection locale={locale} copy={home.texts} />

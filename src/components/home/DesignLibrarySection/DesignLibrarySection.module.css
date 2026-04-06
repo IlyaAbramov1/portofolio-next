@@ -1,0 +1,341 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 24px 0 12px 0;
+}
+
+.bookScene {
+    width: 100%;
+    min-height: 13.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookButton {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+.bookShell {
+    position: relative;
+}
+
+.book {
+    position: relative;
+    width: 10.5rem;
+    height: 12.5rem;
+    perspective: 70rem;
+    transform-style: preserve-3d;
+}
+
+.coverLayer,
+.pageLayer,
+.coverFillLayerShell {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+}
+
+.backCoverLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 9.25rem;
+    height: 12.5rem;
+    border-radius: 0 0.45rem 0.45rem 0;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 24%),
+        var(--accent-color);
+    box-shadow:
+        inset 0.18rem 0 1.2rem rgba(0, 0, 0, 0.01),
+        0 0.9rem 2.2rem rgba(0, 0, 0, 0.01);
+    z-index: 0;
+}
+
+.backCoverPageLayer,
+.coverPageLayer {
+    position: absolute;
+    width: 9rem;
+    height: 12rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    background: white;
+    box-shadow:
+        inset -0.16rem 0 1rem rgba(0, 0, 0, 0.08),
+        0 0.5rem 1.2rem rgba(0, 0, 0, 0.05);
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.backCoverPageLayer {
+    top: 0.28rem;
+    right: 0.32rem;
+    transform: rotateY(1deg);
+    z-index: 1;
+}
+
+.basePageLayer {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 9rem;
+    height: 12rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    background:
+        white;
+    box-shadow:
+        inset -0.16rem 0 1rem rgba(0, 0, 0, 0.1),
+        0 0.7rem 1.8rem rgba(0, 0, 0, 0.08);
+    z-index: 2;
+}
+
+.coverPlaceholderLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 9.25rem;
+    height: 12.5rem;
+    border-radius: 0 0.45rem 0.45rem 0;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 24%),
+        color-mix(in srgb, var(--accent-color) 92%, white 8%);
+    box-shadow:
+        inset 0.14rem 0 1rem rgba(0, 0, 0, 0.12),
+        0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+    transform: translate3d(-0.18rem, -0.08rem, 0);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.coverPageLayer {
+    top: 0.25rem;
+    right: 0.25rem;
+    transform: rotateY(0deg);
+    z-index: 3;
+}
+
+.coverFillLayerShell {
+    top: 0.26rem;
+    right: 0.2rem;
+    width: 9rem;
+    height: 12rem;
+    pointer-events: none;
+}
+
+.coverFillLayer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0.4rem 0.4rem 0;
+    background: white;
+    box-shadow:
+        inset -0.16rem 0 1rem rgba(0, 0, 0, 0.08),
+        0 0.5rem 1.2rem rgba(0, 0, 0, 0.05);
+    transform: translate3d(0, 0, -1px);
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+}
+
+.coverLayer {
+    width: 9.25rem;
+    height: 12.5rem;
+    border-radius: 0 0.45rem 0.45rem 0;
+    padding: 0.9rem 0.78rem 0.72rem 0.86rem;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 24%),
+        var(--accent-color);
+    box-shadow:
+        inset 0.18rem 0 1.2rem rgba(0, 0, 0, 0.18),
+        0 0.9rem 2.2rem rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.coverContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.coverTitle {
+    font-family: var(--font-family-title-regular);
+    font-size: 1.16rem;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.96);
+    max-width: 5.6rem;
+}
+
+.coverEdition {
+    font-family: var(--font-family-title-regular);
+    font-size: 0.44rem;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.pageLayer {
+    width: 9rem;
+    height: 12rem;
+    top: 0.25rem;
+    right: 0.25rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.pageFillLayer {
+    background: white;
+    box-shadow:
+        inset -0.16rem 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.pageFrontLayer {
+    padding: 0.62rem 0.56rem 0.5rem 0.68rem;
+
+        background: white;
+    box-shadow:
+        inset 0.18rem 0 1.2rem rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.pageFrontLayer::before {
+    top: 0.42rem;
+}
+
+.pageFrontLayer::after {
+    top: 0.74rem;
+}
+
+.pageContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.42rem;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.pageMedia {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.42 / 1;
+    overflow: hidden;
+    border-radius: 0.24rem;
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid var(--stroke-color);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.pageImage {
+    object-fit: cover;
+}
+
+.pageMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+}
+
+.pageTitle {
+    font-family: var(--font-family-title-regular);
+    font-size: 1rem;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: rgba(32, 28, 18, 0.92);
+    margin-bottom: 0.2rem;
+}
+
+.pageSubtitle {
+    font-family: var(--font-family-title-regular);
+    font-size: 0.46rem;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: rgba(58, 49, 32, 0.84);
+}
+
+.pageUrl {
+    font-size: 0.3rem;
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-thickness: 0.04em;
+    text-underline-offset: 0.08em;
+    word-break: break-all;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    color: var(--thirdly-text-color);
+    margin-bottom: 8px;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 128px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-color);
+    background: var(--accent-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    color: var(--button-text-color);
+    text-transform: none;
+}
+
+.cta:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 560px) {
+    .bookScene {
+        min-height: 11.5rem;
+    }
+
+    .book {
+        transform: scale(0.86);
+        transform-origin: center top;
+    }
+}

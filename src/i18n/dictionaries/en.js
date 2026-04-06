@@ -53,6 +53,12 @@ const dictionary = {
                 { id: 4, workPlace: "Freelance Designer", workPeriod: "2019 — now" },
             ],
         },
+        designLibrary: {
+            title: "Design Library",
+            description: "A curated collection of designer and studio websites.",
+            cta: "Go to ↗",
+            href: "https://design-biblioteka.ru/",
+        },
         clients: {
             title: "Clients",
             ariaLabel: "Clients",

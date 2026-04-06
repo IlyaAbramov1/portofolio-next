@@ -10,6 +10,9 @@ const projectRoot = fileURLToPath(new URL(".", import.meta.url));
 const nextConfig = {
     output: "export",
     trailingSlash: true,
+    images: {
+        unoptimized: true,
+    },
     pageExtensions: ["js", "jsx", "md", "mdx"],
     turbopack: {
         root: projectRoot,

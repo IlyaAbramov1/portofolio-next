@@ -16,6 +16,7 @@ export const SECTION_IDS = {
     about: "aboutMe",
     follow: "follow",
     work: "work",
+    designLibrary: "designLibrary",
     clients: "clients",
     projects: "projects",
     texts: "texts",

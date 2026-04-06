@@ -53,6 +53,12 @@ const dictionary = {
                 { id: 4, workPlace: "Дизайнер на фрилансе", workPeriod: "2019 — н.в." },
             ],
         },
+        designLibrary: {
+            title: "Дизайн-библиотека",
+            description: "Курируемая коллекция сайтов дизайнеров и студий.",
+            cta: "Перейти ↗",
+            href: "https://design-biblioteka.ru/",
+        },
         clients: {
             title: "Клиенты",
             ariaLabel: "Клиенты",

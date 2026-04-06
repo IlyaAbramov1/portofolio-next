@@ -10,7 +10,7 @@
         /* Text */
         --text-color: hsl(var(--h), var(--s), 20%);
         --secondary-text-color: hsl(var(--h), var(--s), 34%);
-        --thirdly-text-color: hsl(var(--h), var(--s), 72%);
+        --thirdly-text-color: hsl(var(--h), var(--s), 66%);
         --fourthly-text-color: hsl(var(--h), var(--s), 88%);
         /* Surfaces */
         --stroke-color: hsl(var(--h) var(--s) 86%);
