@@ -1,0 +1,39 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    flex: 0 0 auto;
+    line-height: 0;
+}
+
+.svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.svg [data-animated-icon-dot] {
+    animation-fill-mode: both;
+}
+
+.icon[data-animating="true"] .svg [data-animated-icon-dot] {
+    animation-name: iconDotGlint;
+    animation-duration: 300ms;
+    animation-delay: var(--icon-dot-delay);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes iconDotGlint {
+    0%,
+    100% {
+        fill: var(--icon-dot-original-fill);
+    }
+
+    45% {
+        fill: var(--secondary-bg-color);
+    }
+}

@@ -18,19 +18,19 @@
 
 .marquee::before {
     left: 0;
-    background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+    background: linear-gradient(to right, var(--bg-color) 20%, transparent 100%);
 }
 
 .marquee::after {
     right: 0;
-    background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+    background: linear-gradient(to left, var(--bg-color) 20%, transparent 100%);
 }
 
 .marqueeTrack {
     width: max-content;
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 44px;
     padding: 12px 0;
     animation: marquee 28s linear infinite;
     will-change: transform;

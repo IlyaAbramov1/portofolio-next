@@ -9,14 +9,8 @@ const dictionary = {
     home: {
         header: {
             logoAriaLabel: "Home",
-            primaryLabel: "Site sections:",
-            primaryLinks: [
-                { href: "#aboutMe", label: "About↗" },
-                { href: "#work", label: "Work↗" },
-                { href: "#clients", label: "Clients↗" },
-                { href: "#projects", label: "Projects↗" },
-                { href: "#texts", label: "Texts↗" },
-            ],
+            identityTitle: "Ilya Abramov",
+            identitySubtitle: "Designer",
             secondaryLabel: "Find me here:",
             secondaryLinks: [
                 { href: SITE_LINKS.email, label: "Email↗" },
@@ -25,6 +19,9 @@ const dictionary = {
                 { href: SITE_LINKS.instagram, label: "Instagram↗", external: true },
             ],
         },
+        sidebar: {
+            contactCta: "Contact↗",
+        },
         about: {
             title: "About",
             intro: "I'm Ilya. A web, graphic, and 2D motion designer.",
@@ -32,16 +29,14 @@ const dictionary = {
             currentStudio: "Sirena↗",
             currentMiddle: ", the in-house creative studio inside ",
             currentCompany: "Sports.ru↗",
-            pastPrefix: ". Before that, I spent three years at the Samara chain ",
-            pastBrand: "Dodo↗",
-            pastMiddle: " and the agency ",
+            currentAfterCompany: ". Before that, I spent three years at the agency ",
             pastAgency: "Tomat↗",
+            pastMiddle: " and the Samara chain ",
+            pastBrand: "Dodo↗",
             pastSuffix: ", working on design, art direction, and team growth.",
+            passion: "I am in love with my profession and keep exploring different areas of design through books, courses, and lectures.",
             goal: "I'm moving toward becoming a design engineer. I learned HTML, CSS, and Vanilla JS, and I'm now studying TypeScript and React + Redux.",
             final: "I love design.",
-        },
-        follow: {
-            cta: "My Telegram channel↗",
         },
         work: {
             title: "Work",
@@ -73,14 +68,14 @@ const dictionary = {
                 {
                     slug: "dream-layout",
                     title: "Dream Layout vs Code Reality",
+                    year: "2025",
                     description: "How to carry design into development and production",
-                    linkText: "Read ↗",
                 },
                 {
                     slug: "what-design-is",
                     title: "What Is Design?",
+                    year: "2024",
                     description: "A personal search for the meaning of design",
-                    linkText: "Read ↗",
                 },
             ],
         },
@@ -93,16 +88,16 @@ const dictionary = {
         },
     },
     footer: {
-        note: "Designed and developed by Ilya Abramov. Last update March 26",
+        note: "Designed and developed by Ilya Abramov. Last update June 26",
         toTop: "Back to top↑",
     },
     projectsPage: {
-        title: "All projects",
+        title: "Projects",
         description: "This page features projects starting from 2022.",
         back: "← Home",
     },
     textsPage: {
-        back: "←Home",
+        back: "← Home",
         original: "Original article↗",
         articleLabel: "Article",
         translationLabel: "Translation",

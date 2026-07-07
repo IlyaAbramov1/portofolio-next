@@ -1,8 +1,8 @@
-import styles from "@/components/ui/Header/Header.module.css";
+import styles from "./PageHeaderIntro.module.css";
 
 export default function PageHeaderIntro({ title, subtitle, description }) {
     return (
-        <div className={styles.bottom}>
+        <div className={styles.intro}>
             <div className="h1">{title}</div>
             {subtitle ? <div className="subText">{subtitle}</div> : null}
             {description ? <div className="text">{description}</div> : null}

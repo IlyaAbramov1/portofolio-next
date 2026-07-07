@@ -6,19 +6,16 @@ import { SECTION_IDS } from "@/lib/site";
 export default function TextsSection({ locale, copy }) {
     return (
         <section id={SECTION_IDS.texts} className="innerContainer">
-            <BlockHeader
-                iconName="texts"
-                title={copy.title}
-            />
+            <BlockHeader title={copy.title} iconName="texts" />
             {copy.items.map((item) => (
                 <ListItem
                     key={item.slug}
                     cover={item.cover}
                     title={item.title}
                     description={item.description}
+                    year={item.year}
                     isNew={item.isNew}
                     href={localizeHref(locale, `/texts/${item.slug}`)}
-                    linkText={item.linkText}
                 />
             ))}
         </section>

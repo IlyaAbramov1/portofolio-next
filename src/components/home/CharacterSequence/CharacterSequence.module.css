@@ -1,0 +1,69 @@
+.stage {
+    min-height: 342px;
+    padding-top: 24px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.sequence {
+    width: 294px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    object-fit: contain;
+    opacity: 0;
+}
+
+.frame:first-child {
+    opacity: 1;
+}
+
+.isReady .frame {
+    animation: personFrame 66.667ms linear var(--frame-delay) forwards;
+}
+
+.isReady .frame:last-child {
+    animation-name: personFinalFrame;
+}
+
+@keyframes personFrame {
+    0%,
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes personFinalFrame {
+    0%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .stage {
+        min-height: 351px;
+        padding-top: 0;
+        align-items: flex-start;
+    }
+
+    .sequence {
+        width: min(307px, 100%);
+    }
+}

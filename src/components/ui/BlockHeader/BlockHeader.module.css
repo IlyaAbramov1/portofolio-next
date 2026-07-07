@@ -17,19 +17,6 @@
 .blockHeaderIcon {
     width: 24px;
     height: 24px;
-    object-fit: cover;
-
-    pointer-events: none;;
+    flex: 0 0 auto;
+    object-fit: contain;
 }
-
-.blockHeaderIcon img {
-    width: 24px;
-    height: 24px;
-}
-
-.blockHeaderTitle {
-    font-size: var(--little-text-size);
-    line-height: var(--little-text-line-height);
-    letter-spacing: var(--text-letter-spacing);
-}
-

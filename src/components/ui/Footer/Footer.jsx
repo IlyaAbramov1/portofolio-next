@@ -6,8 +6,9 @@ import MorphText from "../MorphText/MorphText"
 import styles from "./Footer.module.css"
 
 export default function Footer({
-    note = "Designed and developed by Ilya Abramov. Last update March 26",
+    note,
     toTopLabel = "Перейти наверх↑",
+    variant = "default",
 }) {
     function handleClick() {
         window.scrollTo({
@@ -17,14 +18,14 @@ export default function Footer({
     }
 
     return (
-        <footer className="innerContainer">
+        <footer className={variant === "sidebar" ? styles.sidebarFooter : "innerContainer"}>
             <Reveal>
-                    <div className={styles.footerContainer}>
-                        <p className="subText">{note}</p>
-                        <MorphText>
-                            <button type="button" onClick={handleClick} className="link">{toTopLabel}</button>
-                        </MorphText>
-                    </div>
+                <div className={styles.footerContainer}>
+                    {note ? <p className="subText">{note}</p> : null}
+                    <MorphText>
+                        <button type="button" onClick={handleClick} className="link">{toTopLabel}</button>
+                    </MorphText>
+                </div>
             </Reveal>
         </footer>
     )

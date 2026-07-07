@@ -11,7 +11,7 @@
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: balance;
 
-    color: var(--secondary-text-color);
+    color: var(--text-color);
 
     text-align: left;
     text-decoration: none;
@@ -21,7 +21,6 @@
     font-size: var(--main-text-size);
     line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
-    text-wrap: pretty;
 
     color: var(--thirdly-text-color); 
 
@@ -30,5 +29,18 @@
 }
 
 @media (max-width: 620px) {
-    
+    .workItem {
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .workItemText {
+        max-width: calc(100% - 108px);
+        text-wrap: pretty;
+    }
+
+    .workItemSubText {
+        flex: 0 0 auto;
+        padding-top: 0;
+    }
 }

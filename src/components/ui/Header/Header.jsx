@@ -40,14 +40,15 @@ function LinksRow({ label, links, locale }) {
 export default function Header({
     locale = "ru",
     logoAriaLabel = "На главную",
-    primaryLabel,
-    primaryLinks,
     secondaryLabel,
     secondaryLinks,
-    bottomSlot
+    bottomSlot,
+    variant = "default",
 }) {
+    const className = `${styles.header} ${variant === "sidebar" ? styles.sidebarHeader : ""}`.trim();
+
     return (
-        <header className={styles.header}>
+        <header className={className}>
             <Reveal>
                 <div className={styles.topRow}>
                     <div className={styles.logo}>
@@ -69,8 +70,6 @@ export default function Header({
                     <ThemeToggle locale={locale} />
                 </div>
             </Reveal>
-
-            <LinksRow label={primaryLabel} links={primaryLinks} locale={locale}/>
 
             {bottomSlot ? 
                 <Reveal>

@@ -15,6 +15,7 @@ const clients = [
     { id: "okko", label: "Okko", file: "Okko.svg" },
     { id: "sports", label: "Sports", file: "Sports.svg" },
     { id: "winline", label: "Winline", file: "Winline.svg" },
+    { id: "papa", label: "Papa Johns", file: "Papa.svg" }
 ];
 
 export default function ClientsSection({ copy }) {
@@ -22,7 +23,7 @@ export default function ClientsSection({ copy }) {
 
     return (
         <section id={SECTION_IDS.clients} className="innerContainer">
-            <BlockHeader iconName="clients" title={copy.title} />
+            <BlockHeader title={copy.title} iconName="clients" />
             <Reveal>
                 <div className={styles.marquee} aria-label={copy.ariaLabel}>
                     <div className={styles.marqueeTrack}>

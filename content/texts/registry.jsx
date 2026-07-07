@@ -2,7 +2,6 @@ import { TEXTS_META } from "./meta";
 import { locales } from "@/i18n/config";
 import { localizeHref } from "@/i18n/utils";
 import { getDictionary } from "@/i18n/getDictionary";
-import PageHeaderIntro from "@/components/ui/PageHeaderIntro/PageHeaderIntro";
 import { getFooterProps } from "@/lib/page-data";
 
 const TEXTS = {
@@ -18,6 +17,14 @@ const TEXTS = {
                 kind: "Статья",
                 year: "2025",
                 description: "О том, как дизайнеру говорить с разработкой на одном языке и доводить идеи до точной реализации.",
+                toc: [
+                    { id: "intro", label: "Вступление", desktop: false },
+                    { id: "responsibility", label: "Ответственность за результат" },
+                    { id: "ideas", label: "Проектирование идей" },
+                    { id: "specification", label: "Как поставить ТЗ" },
+                    { id: "communication", label: "Как донести ТЗ" },
+                    { id: "conclusion", label: "Заключение" },
+                ],
             },
             en: {
                 meta: {
@@ -28,6 +35,14 @@ const TEXTS = {
                 kind: "Article",
                 year: "2025",
                 description: "How designers can speak with development in the same language and reach precise implementation.",
+                toc: [
+                    { id: "intro", label: "Introduction", desktop: false },
+                    { id: "responsibility", label: "Responsibility for the Outcome" },
+                    { id: "ideas", label: "Designing Ideas" },
+                    { id: "specification", label: "Writing a Brief" },
+                    { id: "communication", label: "Communicating the Brief" },
+                    { id: "conclusion", label: "Conclusion" },
+                ],
             },
         },
     },
@@ -116,16 +131,21 @@ export async function getTextEntry(locale, slug) {
     return {
         meta: localizedEntry.meta,
         loadContent,
+        article: {
+            description: localizedEntry.description,
+            kind: localizedEntry.kind,
+            subtitle: `${localizedEntry.kind} | ${localizedEntry.year}`,
+            title: localizedEntry.title,
+            year: localizedEntry.year,
+        },
         header: {
             locale,
-            bottomSlot: (
-                <PageHeaderIntro
-                    title={localizedEntry.title}
-                    subtitle={`${localizedEntry.kind} | ${localizedEntry.year}`}
-                    description={localizedEntry.description}
-                />
-            ),
             secondaryLinks,
+        },
+        navigation: {
+            backHref: "/",
+            backLabel: dictionary.textsPage.back,
+            items: localizedEntry.toc || [],
         },
         footer: getFooterProps(dictionary),
         href: localizeHref(locale, `/texts/${slug}`),

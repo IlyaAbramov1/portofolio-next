@@ -6,13 +6,12 @@
     gap: 80px;
     flex-direction: row;
 
-    text-align: left;
-
     color: var(--secondary-text-color)
 }
 
 .footerContainer p {
     text-wrap: balance;
+    text-align: left;
 }
 
 .footerContainer button {
@@ -20,6 +19,24 @@
     border: none;
     background: none;
     white-space: nowrap;
+}
+
+.sidebarFooter {
+    width: 100%;
+    padding: 24px 0;
+}
+
+.sidebarFooter .footerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .sidebarFooter {
+        padding: 32px 0;
+    }
 }
 
 @media (max-width: 620px) {

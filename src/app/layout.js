@@ -1,5 +1,4 @@
 import "./globals.css";
-import localFont from "next/font/local";
 import Script from "next/script";
 import { withAssetVersion } from "@/lib/assets";
 import {
@@ -9,23 +8,6 @@ import {
     YANDEX_METRIKA_SCRIPT,
 } from "@/lib/site";
 import { createSiteMetadata } from "@/lib/metadata";
-
-const garamond = localFont({
-    src: [
-        {
-            path: "../../public/fonts/EBGaramond-Regular.woff2",
-            weight: "400",
-            style: "normal",
-        },
-        {
-            path: "../../public/fonts/EBGaramond-Italic.woff2",
-            weight: "400",
-            style: "italic",
-        },
-    ],
-    variable: "--garamond",
-    display: "swap",
-});
 
 export const metadata = {
     ...createSiteMetadata({
@@ -50,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="ru">
-            <body suppressHydrationWarning className={`${garamond.variable} appBody`}>
+            <body suppressHydrationWarning className={`appBody`}>
                 <Script id="theme-init" strategy="beforeInteractive">
                     {THEME_INIT_SCRIPT}
                 </Script>

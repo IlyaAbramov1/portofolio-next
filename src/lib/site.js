@@ -9,12 +9,11 @@ export const SITE_LINKS = {
     sports: "https://sports.ru/",
     dodo: "https://dodopizza.ru/samara",
     tomat: "http://tomat.team/",
-    telegramChannel: "https://t.me/tehnichka_design/",
+    tacticsPractice: "https://www.instagram.com/tacticsandpractice/",
 };
 
 export const SECTION_IDS = {
     about: "aboutMe",
-    follow: "follow",
     work: "work",
     designLibrary: "designLibrary",
     clients: "clients",

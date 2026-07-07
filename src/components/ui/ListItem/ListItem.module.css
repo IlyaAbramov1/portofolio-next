@@ -10,27 +10,29 @@
 }
 
 .listItemContainerWithCover {
-    border: 1px solid var(--stroke-color);
-    border-radius: 12px;
-    box-shadow:
-        0px 1px 2px -1px rgba(0, 0, 0, 0.03),
-        0px 2px 4px 0px rgba(0, 0, 0, 0.01);
-    background: var(--secondary-bg-color);
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 16px;
 
-    overflow: hidden;
+    border-radius: 24px;
+    background-color: var(--secondary-bg-color);
+    transition: box-shadow 0.2s ease;
 }
 
-.listItemContainerWithCover:hover {
-    text-transform: uppercase;
-
-    border: 1px solid var(--secondary-stroke-color);
-    background-color: var(--tertiary-bg-color);
+.listItemContainerWithCover:hover,
+.listItemContainerWithCover:focus-within {
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.06), 0 0 3px 0 rgba(0, 0, 0, 0.14);
 }
 
 .listItemCoverWrapper {
     width: 100%;
-    height: 320px;
+    aspect-ratio: 587 / 391;
     position: relative;
+    overflow: hidden;
+
+    border-radius: 20px;
+    background-color: var(--secondary-bg-color);
 }
 
 .listItemCover {
@@ -38,14 +40,10 @@
     height: 100%;
     object-fit: cover;
     pointer-events: none;
-
-    
     position: relative;
     z-index: 1;
     display: block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
 
 .listItemContent {
     width: 100%;
@@ -55,15 +53,7 @@
     justify-content: space-between;
     gap: 12px;
 
-    padding: 16px 18px 18px 24px;
-}
-
-.listItemContainerWithCover {
-    border: 1px solid var(--stroke-color);
-    border-radius: 12px;
-    background: var(--secondary-bg-color);
-
-    transition: 800ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding: 0;
 }
 
 .listItemContentArticle {
@@ -74,23 +64,29 @@
     justify-content: space-between;
     gap: 12px;
 
-    padding: 0px 0px;
+    padding: 0;
 
     border-radius: 12px;
     background: transparent;
 
-    transition: 800ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition:
+        background-color 800ms cubic-bezier(0.075, 0.82, 0.165, 1),
+        padding 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
     overflow: hidden;
-}
-
-.listItemContentArticle:hover {
-    text-transform: uppercase;
 }
 
 .listItemText {
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 8px;
+}
+
+.listItemContainerWithCover .listItemText {
+    gap: 0;
+}
+
+.listItemContainerWithCover:hover .listItemTitle {
+    color: var(--blue-color);
 }
 
 .listMedalAndText {
@@ -103,14 +99,53 @@
 .listItemTitleRow {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     max-width: 100%;
-    margin-bottom: 2px;
+    flex-wrap: wrap;
 }
 
-.listItemContainer:hover .listItemTitleRow {
-    color: var(--accent-color);
-} 
+.listItemTitle {
+    color: var(--text-color);
+    text-align: left;
+    transition: color 0.16s ease;
+}
+
+.listItemContentArticle:hover .listItemTitle {
+    color: var(--blue-color);
+}
+
+.listItemContainerWithCover .listItemTitleRow {
+    align-items: baseline;
+}
+
+.listItemTitle,
+.listItemYear {
+    font-family: var(--font-family-h2);
+    font-size: var(--h3-text-size);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+.listItemContainerWithCover .listItemTitle {
+    color: var(--text-color);
+}
+
+.listItemYear {
+    color: var(--thirdly-text-color);
+}
+
+.projectTags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.listItemContainerWithCover .projectTags {
+    margin-top: 12px;
+}
 
 .medalWrap {
     position: relative;
@@ -118,6 +153,18 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.listItemCoverWrapper .medalWrap {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+}
+
+.listItemCoverWrapper .medalBadge {
+    right: calc(100% + 8px);
+    transform: translateY(2px);
 }
 
 .coin {
@@ -160,11 +207,27 @@
 
 .listItemSubText {
     font-size: var(--main-text-size);
-    line-height: var(--main-text-line-height);
+    line-height: 1.4;
     text-wrap: pretty;
 
     color: var(--thirdly-text-color); 
     text-align: left;
+}
+
+.listItemContainerWithCover .listItemSubText {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 180ms ease, margin-top 180ms ease, opacity 180ms ease;
+}
+
+.listItemContainerWithCover:hover .listItemSubText,
+.listItemContainerWithCover:focus-within .listItemSubText {
+    max-height: 180px;
+    margin-top: 16px;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .listItemDescription {
@@ -175,37 +238,18 @@
     flex-wrap: wrap; 
 }
 
-.linkButton {
-    display: flex;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--button-text-color);
-    background-color: var(--accent-color);
-    font-size: var(--main-text-size);
-    text-decoration: none;
-    line-height: 100%;
-    white-space: nowrap;
-
-    transition: all 0.1s ease;
-}
-
-.linkButton:hover {
-    color: var(--button-text-color) !important;
-    background-color: var(--accent-color);
-    text-transform: uppercase;
-}
-
 @media (max-width: 620px) {
-    .listItemContainerWithCover:hover {
-        text-transform: none;
+    .listItemContainerWithCover {
+        gap: 16px;
+        padding: 16px;
+        border-radius: 24px;
     }
 
     .listItemCoverWrapper {
         width: 100%;
-        height: 220px;
+        aspect-ratio: 587 / 391;
         position: relative;
+        border-radius: 20px;
     }
 
     .listItemContentArticle:hover {

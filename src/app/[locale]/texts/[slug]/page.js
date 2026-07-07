@@ -29,7 +29,12 @@ export default async function TextPage({ params }) {
     const Content = await entry.loadContent();
 
     return (
-        <Prose headerProps={{ ...entry.header, locale }} footerProps={entry.footer}>
+        <Prose
+            article={entry.article}
+            footerProps={entry.footer}
+            headerProps={{ ...entry.header, locale }}
+            navigation={entry.navigation}
+        >
             <Content />
         </Prose>
     );

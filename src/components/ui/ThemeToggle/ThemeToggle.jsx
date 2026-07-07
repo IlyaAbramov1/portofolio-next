@@ -1,45 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import { useSyncExternalStore } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { defaultLocale, locales } from "@/i18n/config";
-import { withAssetVersion } from "@/lib/assets";
+import useIsDarkTheme from "@/hooks/useIsDarkTheme";
+import SecondaryButton from "@/components/ui/SecondaryButton/SecondaryButton";
 import styles from "./ThemeToggle.module.css";
-
-function subscribe(onStoreChange) {
-    if (typeof window === "undefined") {
-        return () => {};
-    }
-
-    const handleChange = () => onStoreChange();
-
-    window.addEventListener("storage", handleChange);
-    window.addEventListener("themechange", handleChange);
-
-    return () => {
-        window.removeEventListener("storage", handleChange);
-        window.removeEventListener("themechange", handleChange);
-    };
-}
-
-function getThemeSnapshot() {
-    if (typeof window === "undefined" || typeof document === "undefined") {
-        return false;
-    }
-
-    const savedTheme = window.localStorage.getItem("theme");
-    return savedTheme === "dark" || document.body.classList.contains("dark-theme");
-}
-
-function getServerThemeSnapshot() {
-    return false;
-}
 
 export default function ThemeToggle({ locale = defaultLocale }) {
     const router = useRouter();
     const pathname = usePathname();
-    const isDark = useSyncExternalStore(subscribe, getThemeSnapshot, getServerThemeSnapshot);
+    const isDark = useIsDarkTheme();
+    const iconTheme = isDark ? "dark-theme" : "light-theme";
+    const themeIcon = isDark ? "light" : "moon";
+    const localeIcon = locale === "ru" ? "en" : "ru";
 
     const handleToggleTheme = () => {
         const nextIsDark = !isDark;
@@ -61,32 +34,19 @@ export default function ThemeToggle({ locale = defaultLocale }) {
 
     return (
         <div className={styles.toggleGroup}>
-            <button
-                type="button"
-                className={styles.langToggle}
-                onClick={handleToggleLocale}
-                aria-label={locale === "ru" ? "Switch language to English" : "Переключить язык на русский"}
-            >
-                <span className={styles.langValue}>{locale.toUpperCase()}</span>
-            </button>
-            <button
-                type="button"
-                className={styles.themeToggle}
+            <SecondaryButton
+                icon={`/icons/${iconTheme}/${themeIcon}.svg`}
+                iconAlt=""
                 onClick={handleToggleTheme}
                 aria-pressed={isDark}
                 aria-label="Переключить тему"
-            >
-                <Image
-                    src={withAssetVersion(
-                        isDark
-                            ? "/default-icons/dark-theme/moon.svg"
-                            : "/default-icons/light-theme/sun.svg"
-                    )}
-                    alt=""
-                    width={16}
-                    height={16}
-                />
-            </button>
+            />
+            <SecondaryButton
+                icon={`/icons/${iconTheme}/${localeIcon}.svg`}
+                iconAlt=""
+                onClick={handleToggleLocale}
+                aria-label={locale === "ru" ? "Switch language to English" : "Переключить язык на русский"}
+            />
         </div>
     );
 }

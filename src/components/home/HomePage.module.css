@@ -1,16 +1,109 @@
-.page {
+:global(.page:has(.homePageShell)) {
     width: 100%;
-    max-width: 580px;
-    margin: 0 auto;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-
-    padding: 0 12px;
+    max-width: none;
+    padding: 0;
+    overflow-x: visible;
 }
 
-@media (max-width: 620px) {
-    
+.pageShell {
+    --home-page-gutter: 200px;
+    --home-sidebar-width: 200px;
+    --home-main-width: 619px;
+    --home-content-offset: 421px;
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 var(--home-page-gutter);
+    position: relative;
+    isolation: isolate;
+}
+
+.mainContent {
+    width: 100%;
+    padding-left: var(--home-content-offset);
+    padding-bottom: 72px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.contentStack {
+    width: min(100%, var(--home-main-width));
+}
+
+.mainContent :global(.innerContainer) {
+    background-color: transparent;
+    padding: 52px 0;
+}
+
+.mainContent :global(section.innerContainer:first-of-type) {
+    padding-top: 0;
+}
+
+.sectionDivider {
+    width: 100%;
+    height: 1px;
+    margin: 24px 0 0;
+    border: 0;
+    flex: 0 0 auto;
+
+    background-color: var(--secondary-stroke-color);
+}
+
+.sectionDivider + :global(section.innerContainer) {
+    padding-top: 64px;
+}
+
+.mobileFooter {
+    display: none;
+}
+
+@media (max-width: 1180px) {
+    .pageShell {
+        --home-page-gutter: 40px;
+        --home-content-offset: 260px;
+
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    :global(.page:has(.homePageShell)) {
+        max-width: none;
+        padding: 0;
+    }
+
+    .pageShell {
+        --home-page-gutter: 8px;
+
+        margin: 0 auto;
+        padding: 0 8px;
+        display: block;
+    }
+
+    .mainContent {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 105px;
+        padding-bottom: 64px;
+    }
+
+    .contentStack {
+        width: 100%;
+    }
+
+    .mobileFooter {
+        width: 100%;
+        padding: 24px 0 12px;
+        position: relative;
+        z-index: 1;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobileFooter p {
+        max-width: 182px;
+        text-align: center;
+    }
 }

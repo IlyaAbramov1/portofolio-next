@@ -1,10 +1,10 @@
 <svg width="96" height="26" viewBox="0 0 96 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <mask id="mask0_697_28214" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="96" height="24">
-<rect y="1.31702" width="95.3333" height="23.366" fill="url(#pattern0_697_28214)"/>
+<rect y="1.31699" width="95.3333" height="23.366" fill="url(#pattern0_697_28214)"/>
 </mask>
 <g mask="url(#mask0_697_28214)">
-<rect y="1.31702" width="95.3333" height="23.366" fill="#ABB0BA"/>
-<rect x="7.79199" y="5.67859" width="60.1285" height="14.6427" fill="#ABB0BA"/>
+<rect y="1.31699" width="95.3333" height="23.366" fill="#A9B8C6"/>
+<rect x="7.79199" y="5.67856" width="60.1285" height="14.6427" fill="#A9B8C6"/>
 </g>
 <defs>
 <pattern id="pattern0_697_28214" patternContentUnits="objectBoundingBox" width="1" height="1">

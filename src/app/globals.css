@@ -1,24 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@400&family=JetBrains+Mono:wght@450&display=swap");
+
 :root {
     /* Color */
-        --h: 0;
-        --s: 0%;
+        --h: 210;
+        --s: 20%;
         /* Accent */
         --button-text-color: hsl(var(--h), var(--s), 97%);
-        --accent-color: hsl(220, 100%, 60%);
+        --accent-color: var(--text-color);
+        --blue-color: hsl(213, 100%, 50%);
         --secondary-accent-color: hsl(var(--h), 100%, 60%);
         --accent-secondary-bg: hsl(var(--h), 100%, 90%);
+        --secondary-bg-button: var(--secondary-bg-color);
+        --primary-button-bg: hsl(220, 14%, 4%);
+        --primary-button-text-color: hsl(var(--h), var(--s), 97%);
+        --primary-button-hover-bg: hsl(220, 14%, 14%);
+        --secondary-bg-button-hover: var(--tertiary-bg-color);
         /* Text */
-        --text-color: hsl(var(--h), var(--s), 20%);
+        --text-color: hsl(220, 20, 4%);
         --secondary-text-color: hsl(var(--h), var(--s), 34%);
-        --thirdly-text-color: hsl(var(--h), var(--s), 66%);
+        --thirdly-text-color: hsl(var(--h), var(--s), 72%);
         --fourthly-text-color: hsl(var(--h), var(--s), 88%);
         /* Surfaces */
+        --bg-color: hsl(210, 20%, 96%);
+        --secondary-bg-color: hsl(210, 20%, 100%);
+        --home-background-bg-rgb: 243 245 247;
+        --home-background-dark-rgb: 0 112 235;
+        --home-background-mid-rgb: 146 226 247;
         --stroke-color: hsl(var(--h) var(--s) 86%);
         --secondary-stroke-color: hsl(var(--h) var(--s) 88%);
-        --grid-size: 24px;
-        --grid-line: hsl(var(--h) var(--s) 92%);
-        --bg-color: hsl(var(--h) var(--s) 95%);
-        --secondary-bg-color: hsl(var(--h) var(--s) 100%);
         --tertiary-bg-color: hsl(var(--h) var(--s) 93%);
         --hover-bg: hsl(var(--h) var(--s) 97%);
         /* Technical */
@@ -29,19 +38,22 @@
 
     /* Font style */
         /* H2 */
-        --h2-text-size: 30px;
+        --h2-text-size: 36px;
         --h2-text-line-height: 110%;
+        /* H3 */
+        --h3-text-size: 28px;
+        --h3-text-line-height: 110%;
         /* Main text */
-        --main-text-size: 16px;
+        --main-text-size: 15px;
         --main-text-line-height: 160%;
         --main-text-letter-spacing: -0.04em;
+        --text-letter-spacing: var(--main-text-letter-spacing);
         /* Little text */
-        --little-text-size: 14px;
+        --little-text-size: 12px;
         --little-text-line-height: 150%;
 
     --font-family-mono: 'JetBrains Mono', monospace;
-    --font-family-title-regular: 'EBGaramond-Regular', serif;
-    --font-family-quote: 'EBGaramond-Regular', serif;
+    --font-family-h2: 'Handjet', var(--font-family-mono);
 }
 
 html,
@@ -57,9 +69,15 @@ body.dark-theme {
         --s: 8%;
         /* Accent */
         --button-text-color: hsl(var(--h), var(--s), 90%);
-        --accent-color: hsl(220, 100%, 60%);
+        --accent-color: var(--text-color);
+        --blue-color: hsl(213, 100%, 50%);
         --secondary-accent-color: hsl(var(--h), 100%, 60%);
         --accent-secondary-bg: hsl(var(--h) var(--s) 16%);
+        --primary-button-bg: hsl(var(--h) var(--s) 98%);
+        --primary-button-text-color: hsl(220 20% 4%);
+        --primary-button-hover-bg: hsl(0, 0%, 75%);
+        --secondary-bg-button: hsl(var(--h) var(--s) 16%);
+        --secondary-bg-button-hover: hsl(var(--h) var(--s) 22%);
         /* Text */
         --text-color: hsl(var(--h), var(--s), 94%);
         --secondary-text-color: hsl(var(--h), var(--s), 72%);
@@ -69,6 +87,9 @@ body.dark-theme {
         --stroke-color: hsl(var(--h) var(--s) 22%);
         --secondary-stroke-color: hsl(var(--h) var(--s) 24%);
         --bg-color: hsl(var(--h) var(--s) 8%);
+        --home-background-bg-rgb: 19 19 22;
+        --home-background-dark-rgb: 0 54 163;
+        --home-background-mid-rgb: 25 42 67;
         --secondary-bg-color: hsl(var(--h) var(--s) 12%);
         --tertiary-bg-color: hsl(var(--h) var(--s) 10%);
         --hover-bg: hsl(var(--h) var(--s) 14%);
@@ -76,30 +97,6 @@ body.dark-theme {
         /* Legacy aliases */
         --stroke: var(--stroke-color);
         --deep-bg-color: var(--tertiary-bg-color);
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'EBGaramond-Regular';
-    src: url(/fonts/EBGaramond-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'EBGaramond-Italic';
-    src: url(/fonts/EBGaramond-Italic.woff2) format('woff2');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
 }
 
 /* Кастомное выделение текста */
@@ -119,10 +116,10 @@ body.dark-theme {
     padding: 0;
 
     font-family: var(--font-family-mono);
+    font-weight: 400;
     font-size: var(--main-text-size);
     line-height: var(--main-text-line-height);
     letter-spacing: var(--main-text-letter-spacing);
-    color: var(--secondary-text-color);
 
      /* Настройки рендеринга шрифта */
     -webkit-font-smoothing: antialiased;
@@ -157,13 +154,13 @@ body.dark-theme {
 }
 
 .h1 {
-    font-family: var(--garamond) !important;
+    font-family: var(--font-family-h2) !important;
     font-weight: 400;
 
     font-style: normal;
     font-size: 36px;
     line-height: var(--h2-text-line-height);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.12em;
     text-align: left;
     text-wrap: pretty;
 
@@ -171,13 +168,12 @@ body.dark-theme {
 }
 
 .h2 {
-    font-family: var(--garamond) !important;
-    font-weight: 400;
+    font-family: var(--font-family-h2) !important;
 
     font-style: normal;
     font-size: var(--h2-text-size);
     line-height: var(--h2-text-line-height);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
     text-align: left;
     text-wrap: pretty;
 
@@ -197,13 +193,12 @@ body.dark-theme {
     text-wrap: pretty;
     text-align: left;
 
-    color: var(--secondary-text-color);
+    color: var(--text-color);
 
     text-decoration: none;
 }
 
 .subText { 
-    font-size: var(--little-text-size);
     line-height: 140%;
     letter-spacing: var(--main-text-letter-spacing);
     text-wrap: pretty;
@@ -233,20 +228,6 @@ body.dark-theme {
     color: var(--text-color);
 }
 
-.page {
-    width: 100%;
-    max-width: 620px;
-    margin: 0 auto;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-
-    padding: 0 12px;
-    overflow-x: clip;
-}
-
 .link {
     font-size: var(--main-text-size);
     text-decoration: underline;
@@ -257,10 +238,11 @@ body.dark-theme {
 
 .link:hover {
     text-transform: uppercase;
+    color: var(--blue-color);
 }
 
 .link:active {
-    text-decoration: uppercase;
+    text-transform: uppercase;
     color: var(--accent-color);
 }
 

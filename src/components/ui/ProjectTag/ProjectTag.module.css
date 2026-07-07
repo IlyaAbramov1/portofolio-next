@@ -1,0 +1,168 @@
+.tag {
+    min-width: 0;
+    height: 32px;
+    padding: 5px 10px;
+    border-radius: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex: 0 0 auto;
+
+    text-decoration: none;
+}
+
+.label {
+    position: relative;
+    z-index: 1;
+
+    color: currentColor;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.icon {
+    position: relative;
+    z-index: 1;
+
+    width: 16px;
+    height: 16px;
+    display: block;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.accent {
+    color: var(--button-text-color);
+    background-color: var(--accent-color);
+}
+
+.featured {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #08090c;
+    background-color: #fff;
+}
+
+.featured::before {
+    content: "";
+    width: 150%;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+
+    background: conic-gradient(
+        from 0deg,
+        #0070eb,
+        #63fae2,
+        #ffc45c,
+        #ff4f8b,
+        #7b61ff,
+        #0070eb
+    );
+    transform: translate(-50%, -50%);
+    animation: featuredTagBorderSpin 1.65s linear infinite;
+}
+
+.featured::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    z-index: 0;
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.mint {
+    color: #004d41;
+    background-color: #63fae2;
+}
+
+.cyan {
+    color: #003546;
+    background-color: #75dfff;
+}
+
+.pink {
+    color: #65006b;
+    background-color: #f6a4ff;
+}
+
+.coral {
+    color: #ffe1dc;
+    background-color: #7c2c23;
+}
+
+.branding {
+    color: #12651e;
+    background-color: #b2ffad;
+}
+
+.violet {
+    color: #eee8ff;
+    background-color: #4a387a;
+}
+
+.orange {
+    color: #4f4100;
+    background-color: #fff07a;
+}
+
+:global(body.dark-theme) .featured {
+    color: #fff;
+    background-color: #08090c;
+}
+
+:global(body.dark-theme) .featured::after {
+    background-color: #08090c;
+}
+
+:global(body.dark-theme) .mint {
+    color: #00e4c0;
+    background-color: #002C25;
+}
+
+:global(body.dark-theme) .cyan {
+    color: #35dfff;
+    background-color: #001319;
+}
+
+:global(body.dark-theme) .pink {
+    color: #ff37ff;
+    background-color: #3E0041;
+}
+
+:global(body.dark-theme) .coral {
+    color: #ffc9c0;
+    background-color: #57221d;
+}
+
+:global(body.dark-theme) .branding {
+    color: #4cff58;
+    background-color: #002906;
+}
+
+:global(body.dark-theme) .violet {
+    color: #e2d8ff;
+    background-color: #39295f;
+}
+
+:global(body.dark-theme) .orange {
+    color: #ffe600;
+    background-color: #292400;
+}
+
+@keyframes featuredTagBorderSpin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

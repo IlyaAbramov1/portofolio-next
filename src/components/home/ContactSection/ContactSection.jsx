@@ -8,10 +8,7 @@ import styles from "./ContactSection.module.css"
 export default function ContactSection({ copy }) {
     return (
         <section id={SECTION_IDS.contact} className="innerContainer">
-            <BlockHeader 
-                iconName="contacts"
-                title={copy.title}
-            />
+            <BlockHeader title={copy.title} iconName="contacts" />
             <Reveal>
                 <p className="text">{copy.intro}</p>
             </Reveal>
